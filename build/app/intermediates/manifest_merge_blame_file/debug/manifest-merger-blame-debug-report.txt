@@ -1,0 +1,508 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.lawrencebanks.dealkarma"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="29" />
+10    <!--
+11         Flutter needs it to communicate with the running application
+12         to allow setting breakpoints, to provide hot reload, etc.
+13    -->
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:8:5-66
+14-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:8:22-64
+15    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+15-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:9:5-80
+15-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:9:22-78
+16    <uses-permission android:name="android.permission.WAKE_LOCK" />
+16-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:10:5-67
+16-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:10:22-65
+17    <uses-permission android:name="android.permission.VIBRATE" />
+17-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:11:5-65
+17-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:11:22-63
+18    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+18-->[:image_picker] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-80
+18-->[:image_picker] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:7:22-77
+19    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+19-->[:image_picker] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-81
+19-->[:image_picker] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:8:22-78
+20    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" /> <!-- Samsung Badge -->
+20-->[:flutter_local_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:9:5-81
+20-->[:flutter_local_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:9:22-78
+21    <uses-permission android:name="com.sec.android.provider.badge.permission.READ" />
+21-->[:awesome_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\awesome_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-86
+21-->[:awesome_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\awesome_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:8:22-83
+22    <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE" /> <!-- Sony Badge -->
+22-->[:awesome_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\awesome_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:9:5-87
+22-->[:awesome_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\awesome_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:9:22-84
+23    <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE" /> <!-- HTC Badge -->
+23-->[:awesome_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\awesome_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-88
+23-->[:awesome_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\awesome_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:12:22-85
+24    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" />
+24-->[:awesome_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\awesome_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:15:5-81
+24-->[:awesome_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\awesome_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:15:22-78
+25    <uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT" />
+25-->[:awesome_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\awesome_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:16:5-83
+25-->[:awesome_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\awesome_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:16:22-80
+26    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+26-->[:firebase_analytics] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\firebase_analytics\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-79
+26-->[:firebase_analytics] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\firebase_analytics\intermediates\library_manifest\debug\AndroidManifest.xml:7:22-76
+27    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+27-->[com.google.android.gms:play-services-measurement:17.6.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\40ed876d399ca5d02846145241365dae\play-services-measurement-17.6.0\AndroidManifest.xml:26:5-110
+27-->[com.google.android.gms:play-services-measurement:17.6.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\40ed876d399ca5d02846145241365dae\play-services-measurement-17.6.0\AndroidManifest.xml:26:22-107
+28
+29    <application
+29-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:12:5-72:19
+30        android:name="io.flutter.app.FlutterApplication"
+30-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:13:9-57
+31        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+31-->[androidx.core:core:1.3.1] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\4f0501d2783aab005cef372858e85312\core-1.3.1\AndroidManifest.xml:24:18-86
+32        android:debuggable="true"
+33        android:icon="@mipmap/launcher_icon"
+33-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:15:9-45
+34        android:label="Dealkarma" >
+34-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:14:9-34
+35        <activity
+35-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:16:9-46:20
+36            android:name="com.example.fire99.MainActivity"
+36-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:17:13-41
+37            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+37-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:20:13-163
+38            android:hardwareAccelerated="true"
+38-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:21:13-47
+39            android:launchMode="singleTop"
+39-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:18:13-43
+40            android:showWhenLocked="true"
+40-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:23:13-42
+41            android:theme="@style/LaunchTheme"
+41-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:19:13-47
+42            android:turnScreenOn="true"
+42-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:24:13-40
+43            android:windowSoftInputMode="adjustResize" >
+43-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:22:13-55
+44
+45            <!--
+46                 Specifies an Android theme to apply to this Activity as soon as
+47                 the Android process has started. This theme is visible to the user
+48                 while the Flutter UI initializes. After that, this theme continues
+49                 to determine the Window background behind the Flutter UI.
+50            -->
+51            <meta-data
+51-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:29:13-32:17
+52                android:name="io.flutter.embedding.android.NormalTheme"
+52-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:30:15-70
+53                android:resource="@style/NormalTheme" />
+53-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:31:15-52
+54            <!--
+55                 Displays an Android View that continues showing the launch screen
+56                 Drawable until Flutter paints its first frame, then this splash
+57                 screen fades out. A splash screen is useful to avoid any visual
+58                 gap between the end of Android's launch screen and the painting of
+59                 Flutter's first frame.
+60            -->
+61            <meta-data
+61-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:38:13-41:17
+62                android:name="io.flutter.embedding.android.SplashScreenDrawable"
+62-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:39:15-79
+63                android:resource="@drawable/launch_background" />
+63-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:40:15-61
+64
+65            <intent-filter>
+65-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:42:13-45:29
+66                <action android:name="android.intent.action.MAIN" />
+66-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:43:17-68
+66-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:43:25-66
+67
+68                <category android:name="android.intent.category.LAUNCHER" />
+68-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:44:17-76
+68-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:44:27-74
+69            </intent-filter>
+70        </activity>
+71        <!--
+72             Don't delete the meta-data below.
+73             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+74        -->
+75        <meta-data
+75-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:49:9-51:33
+76            android:name="flutterEmbedding"
+76-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:50:13-44
+77            android:value="2" />
+77-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:51:13-30
+78        <meta-data
+78-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:53:9-55:70
+79            android:name="com.google.android.gms.ads.APPLICATION_ID"
+79-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:54:13-69
+80            android:value="ca-app-pub-9553580055895935~1610407402" />
+80-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:55:13-67
+81
+82        <service
+82-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:57:9-60:39
+83            android:name="dev.fluttercommunity.plus.androidalarmmanager.AlarmService"
+83-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:58:13-86
+84            android:exported="false"
+84-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:60:13-37
+85            android:permission="android.permission.BIND_JOB_SERVICE" />
+85-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:59:13-69
+86
+87        <receiver
+87-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:61:9-63:39
+88            android:name="dev.fluttercommunity.plus.androidalarmmanager.AlarmBroadcastReceiver"
+88-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:62:13-96
+89            android:exported="false" />
+89-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:63:13-37
+90        <receiver
+90-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:64:9-70:20
+91            android:name="dev.fluttercommunity.plus.androidalarmmanager.RebootBroadcastReceiver"
+91-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:65:13-97
+92            android:enabled="false" >
+92-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:66:13-36
+93            <intent-filter>
+93-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:67:13-69:29
+94                <action android:name="android.intent.action.BOOT_COMPLETED" />
+94-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:68:17-86
+94-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:68:25-76
+95            </intent-filter>
+96        </receiver>
+97
+98        <provider
+98-->[:image_picker] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:11:9-19:20
+99            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
+99-->[:image_picker] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-82
+100            android:authorities="com.lawrencebanks.dealkarma.flutter.image_provider"
+100-->[:image_picker] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-74
+101            android:exported="false"
+101-->[:image_picker] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-37
+102            android:grantUriPermissions="true" >
+102-->[:image_picker] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:15:13-47
+103            <meta-data
+103-->[:image_picker] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:16:13-18:75
+104                android:name="android.support.FILE_PROVIDER_PATHS"
+104-->[:image_picker] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:17:17-67
+105                android:resource="@xml/flutter_image_picker_file_paths" />
+105-->[:image_picker] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:18:17-72
+106        </provider>
+107
+108        <service
+108-->[:cloud_firestore] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+109            android:name="com.google.firebase.components.ComponentDiscoveryService"
+109-->[:cloud_firestore] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:8:18-89
+110            android:directBootAware="true"
+110-->[com.google.firebase:firebase-common:19.3.1] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\d503b0c4259cc437431abe247fad3dcb\jetified-firebase-common-19.3.1\AndroidManifest.xml:35:13-43
+111            android:exported="false" >
+111-->[com.google.firebase:firebase-auth:19.4.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\341dc748bf1bca3b3fde42fe8ec9baec\firebase-auth-19.4.0\AndroidManifest.xml:35:13-37
+112            <meta-data
+112-->[:cloud_firestore] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+113                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
+113-->[:cloud_firestore] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-134
+114                android:value="com.google.firebase.components.ComponentRegistrar" />
+114-->[:cloud_firestore] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+115            <meta-data
+115-->[:firebase_auth] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+116                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
+116-->[:firebase_auth] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
+117                android:value="com.google.firebase.components.ComponentRegistrar" />
+117-->[:firebase_auth] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+118            <meta-data
+118-->[:firebase_storage] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+119                android:name="com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar"
+119-->[:firebase_storage] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-126
+120                android:value="com.google.firebase.components.ComponentRegistrar" />
+120-->[:firebase_storage] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+121            <meta-data
+121-->[:firebase_analytics] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\firebase_analytics\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-15:85
+122                android:name="com.google.firebase.components:io.flutter.plugins.firebaseanalytics.FlutterFirebaseAppRegistrar"
+122-->[:firebase_analytics] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\firebase_analytics\intermediates\library_manifest\debug\AndroidManifest.xml:14:17-127
+123                android:value="com.google.firebase.components.ComponentRegistrar" />
+123-->[:firebase_analytics] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\firebase_analytics\intermediates\library_manifest\debug\AndroidManifest.xml:15:17-82
+124            <meta-data
+124-->[:firebase_core] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+125                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+125-->[:firebase_core] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
+126                android:value="com.google.firebase.components.ComponentRegistrar" />
+126-->[:firebase_core] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+127            <meta-data
+127-->[com.google.firebase:firebase-auth:19.4.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\341dc748bf1bca3b3fde42fe8ec9baec\firebase-auth-19.4.0\AndroidManifest.xml:36:13-38:85
+128                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+128-->[com.google.firebase:firebase-auth:19.4.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\341dc748bf1bca3b3fde42fe8ec9baec\firebase-auth-19.4.0\AndroidManifest.xml:37:17-109
+129                android:value="com.google.firebase.components.ComponentRegistrar" />
+129-->[com.google.firebase:firebase-auth:19.4.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\341dc748bf1bca3b3fde42fe8ec9baec\firebase-auth-19.4.0\AndroidManifest.xml:38:17-82
+130            <meta-data
+130-->[com.google.firebase:firebase-storage:19.2.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\4cf87bd2103e32de41ecd9b997ac73f6\firebase-storage-19.2.0\AndroidManifest.xml:33:13-35:85
+131                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+131-->[com.google.firebase:firebase-storage:19.2.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\4cf87bd2103e32de41ecd9b997ac73f6\firebase-storage-19.2.0\AndroidManifest.xml:34:17-107
+132                android:value="com.google.firebase.components.ComponentRegistrar" />
+132-->[com.google.firebase:firebase-storage:19.2.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\4cf87bd2103e32de41ecd9b997ac73f6\firebase-storage-19.2.0\AndroidManifest.xml:35:17-82
+133            <meta-data
+133-->[com.google.firebase:firebase-firestore:21.7.1] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\90018fb3e2d07c9891c35d006c61eb95\jetified-firebase-firestore-21.7.1\AndroidManifest.xml:20:13-22:85
+134                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+134-->[com.google.firebase:firebase-firestore:21.7.1] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\90018fb3e2d07c9891c35d006c61eb95\jetified-firebase-firestore-21.7.1\AndroidManifest.xml:21:17-111
+135                android:value="com.google.firebase.components.ComponentRegistrar" />
+135-->[com.google.firebase:firebase-firestore:21.7.1] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\90018fb3e2d07c9891c35d006c61eb95\jetified-firebase-firestore-21.7.1\AndroidManifest.xml:22:17-82
+136            <meta-data
+136-->[com.google.android.gms:play-services-measurement-api:17.6.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\391523864fa35a9ac06cc7ef5a36ec50\play-services-measurement-api-17.6.0\AndroidManifest.xml:30:13-32:85
+137                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+137-->[com.google.android.gms:play-services-measurement-api:17.6.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\391523864fa35a9ac06cc7ef5a36ec50\play-services-measurement-api-17.6.0\AndroidManifest.xml:31:17-139
+138                android:value="com.google.firebase.components.ComponentRegistrar" />
+138-->[com.google.android.gms:play-services-measurement-api:17.6.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\391523864fa35a9ac06cc7ef5a36ec50\play-services-measurement-api-17.6.0\AndroidManifest.xml:32:17-82
+139            <meta-data
+139-->[com.google.firebase:firebase-installations:16.3.2] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\1841d338a14a84c946415c86aa83d41c\firebase-installations-16.3.2\AndroidManifest.xml:17:13-19:85
+140                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+140-->[com.google.firebase:firebase-installations:16.3.2] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\1841d338a14a84c946415c86aa83d41c\firebase-installations-16.3.2\AndroidManifest.xml:18:17-127
+141                android:value="com.google.firebase.components.ComponentRegistrar" />
+141-->[com.google.firebase:firebase-installations:16.3.2] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\1841d338a14a84c946415c86aa83d41c\firebase-installations-16.3.2\AndroidManifest.xml:19:17-82
+142        </service>
+143
+144        <receiver android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver" />
+144-->[:flutter_local_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:12:9-106
+144-->[:flutter_local_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:12:19-103
+145        <receiver android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver" >
+145-->[:flutter_local_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:13:9-20:20
+145-->[:flutter_local_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:13:19-107
+146            <intent-filter>
+146-->[:flutter_local_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-19:29
+147                <action android:name="android.intent.action.BOOT_COMPLETED" />
+147-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:68:17-86
+147-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:68:25-76
+148                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+148-->[:flutter_local_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:16:17-84
+148-->[:flutter_local_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:16:25-81
+149                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+149-->[:flutter_local_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:17:17-82
+149-->[:flutter_local_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:17:25-79
+150                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+150-->[:flutter_local_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:18:17-82
+150-->[:flutter_local_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:18:25-79
+151            </intent-filter>
+152        </receiver>
+153        <!--
+154        <service
+155            android:name=".services.firebase.FCMService"
+156            android:exported="false">
+157            <intent-filter>
+158                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+159            </intent-filter>
+160        </service>
+161
+162        <service
+163            android:name=".services.AutoCancelService"
+164            android:stopWithTask="true" />
+165
+166        <meta-data android:name="firebase_messaging_auto_init_enabled" android:value="true" />
+167
+168        <meta-data
+169            android:name="com.google.firebase.messaging.default_notification_channel_id"
+170            android:value="me.carda.awesome_notifications.firebase.background_channel"/>
+171        -->
+172        <receiver android:name="me.carda.awesome_notifications.notifications.broadcastReceivers.DismissedNotificationReceiver" />
+172-->[:awesome_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\awesome_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:41:9-130
+172-->[:awesome_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\awesome_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:41:19-127
+173        <receiver android:name="me.carda.awesome_notifications.notifications.broadcastReceivers.ScheduledNotificationReceiver" />
+173-->[:awesome_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\awesome_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:42:9-130
+173-->[:awesome_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\awesome_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:42:19-127
+174        <receiver android:name="me.carda.awesome_notifications.notifications.broadcastReceivers.KeepOnTopActionReceiver" />
+174-->[:awesome_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\awesome_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:43:9-124
+174-->[:awesome_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\awesome_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:43:19-121
+175        <receiver android:name="me.carda.awesome_notifications.notifications.broadcastReceivers.RefreshNotificationBootReceiver" >
+175-->[:awesome_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\awesome_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:44:9-54:20
+175-->[:awesome_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\awesome_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:44:19-129
+176            <intent-filter>
+176-->[:awesome_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\awesome_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:45:13-53:29
+177                <category android:name="android.intent.category.DEFAULT" />
+177-->[:awesome_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\awesome_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:46:17-76
+177-->[:awesome_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\awesome_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:46:27-73
+178
+179                <action android:name="android.intent.action.BOOT_COMPLETED" />
+179-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:68:17-86
+179-->C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\android\app\src\main\AndroidManifest.xml:68:25-76
+180                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
+180-->[:awesome_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\awesome_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:49:17-86
+180-->[:awesome_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\awesome_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:49:25-83
+181                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+181-->[:flutter_local_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:16:17-84
+181-->[:flutter_local_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:16:25-81
+182                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+182-->[:flutter_local_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:17:17-82
+182-->[:flutter_local_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:17:25-79
+183                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+183-->[:flutter_local_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:18:17-82
+183-->[:flutter_local_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:18:25-79
+184            </intent-filter>
+185        </receiver>
+186        <receiver android:name="androidx.media.session.MediaButtonReceiver" >
+186-->[:awesome_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\awesome_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:55:9-59:20
+186-->[:awesome_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\awesome_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:55:19-76
+187            <intent-filter>
+187-->[:awesome_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\awesome_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:56:13-58:29
+188                <action android:name="android.intent.action.MEDIA_BUTTON" />
+188-->[:awesome_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\awesome_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:57:17-77
+188-->[:awesome_notifications] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\awesome_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:57:25-74
+189            </intent-filter>
+190        </receiver>
+191
+192        <provider
+192-->[:share] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\share\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-16:20
+193            android:name="io.flutter.plugins.share.ShareFileProvider"
+193-->[:share] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\share\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-70
+194            android:authorities="com.lawrencebanks.dealkarma.flutter.share_provider"
+194-->[:share] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\share\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-74
+195            android:exported="false"
+195-->[:share] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\share\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-37
+196            android:grantUriPermissions="true" >
+196-->[:share] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\share\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-47
+197            <meta-data
+197-->[:image_picker] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:16:13-18:75
+198                android:name="android.support.FILE_PROVIDER_PATHS"
+198-->[:image_picker] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:17:17-67
+199                android:resource="@xml/flutter_share_file_paths" />
+199-->[:image_picker] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:18:17-72
+200        </provider>
+201
+202        <activity
+202-->[:url_launcher] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-11:74
+203            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+203-->[:url_launcher] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-74
+204            android:exported="false"
+204-->[:url_launcher] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-37
+205            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+205-->[:url_launcher] C:\Users\Reda El Ouahabi\Desktop\Faissal_Drio\karma_apps\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-71
+206        <activity
+206-->[com.google.firebase:firebase-auth:19.4.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\341dc748bf1bca3b3fde42fe8ec9baec\firebase-auth-19.4.0\AndroidManifest.xml:24:9-31:50
+207            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
+207-->[com.google.firebase:firebase-auth:19.4.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\341dc748bf1bca3b3fde42fe8ec9baec\firebase-auth-19.4.0\AndroidManifest.xml:25:13-85
+208            android:excludeFromRecents="true"
+208-->[com.google.firebase:firebase-auth:19.4.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\341dc748bf1bca3b3fde42fe8ec9baec\firebase-auth-19.4.0\AndroidManifest.xml:26:13-46
+209            android:exported="true"
+209-->[com.google.firebase:firebase-auth:19.4.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\341dc748bf1bca3b3fde42fe8ec9baec\firebase-auth-19.4.0\AndroidManifest.xml:27:13-36
+210            android:launchMode="singleTask"
+210-->[com.google.firebase:firebase-auth:19.4.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\341dc748bf1bca3b3fde42fe8ec9baec\firebase-auth-19.4.0\AndroidManifest.xml:28:13-44
+211            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
+211-->[com.google.firebase:firebase-auth:19.4.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\341dc748bf1bca3b3fde42fe8ec9baec\firebase-auth-19.4.0\AndroidManifest.xml:29:13-102
+212            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+212-->[com.google.firebase:firebase-auth:19.4.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\341dc748bf1bca3b3fde42fe8ec9baec\firebase-auth-19.4.0\AndroidManifest.xml:30:13-72
+213        <activity
+213-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\6c8be588298e37cce3f4a27b2cb7c183\jetified-play-services-auth-16.0.1\AndroidManifest.xml:23:9-27:75
+214            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+214-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\6c8be588298e37cce3f4a27b2cb7c183\jetified-play-services-auth-16.0.1\AndroidManifest.xml:24:13-93
+215            android:excludeFromRecents="true"
+215-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\6c8be588298e37cce3f4a27b2cb7c183\jetified-play-services-auth-16.0.1\AndroidManifest.xml:25:13-46
+216            android:exported="false"
+216-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\6c8be588298e37cce3f4a27b2cb7c183\jetified-play-services-auth-16.0.1\AndroidManifest.xml:26:13-37
+217            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+217-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\6c8be588298e37cce3f4a27b2cb7c183\jetified-play-services-auth-16.0.1\AndroidManifest.xml:27:13-72
+218        <!--
+219            Service handling Google Sign-In user revocation. For apps that do not integrate with
+220            Google Sign-In, this service will never be started.
+221        -->
+222        <service
+222-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\6c8be588298e37cce3f4a27b2cb7c183\jetified-play-services-auth-16.0.1\AndroidManifest.xml:33:9-36:110
+223            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+223-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\6c8be588298e37cce3f4a27b2cb7c183\jetified-play-services-auth-16.0.1\AndroidManifest.xml:34:13-89
+224            android:exported="true"
+224-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\6c8be588298e37cce3f4a27b2cb7c183\jetified-play-services-auth-16.0.1\AndroidManifest.xml:35:13-36
+225            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
+225-->[com.google.android.gms:play-services-auth:16.0.1] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\6c8be588298e37cce3f4a27b2cb7c183\jetified-play-services-auth-16.0.1\AndroidManifest.xml:36:13-107
+226
+227        <activity
+227-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\600586170946e69bbfdbb8edb0d3d534\play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+228            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+228-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\600586170946e69bbfdbb8edb0d3d534\play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+229            android:exported="false"
+229-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\600586170946e69bbfdbb8edb0d3d534\play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+230            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+230-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\600586170946e69bbfdbb8edb0d3d534\play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+231
+232        <receiver
+232-->[com.google.android.gms:play-services-measurement:17.6.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\40ed876d399ca5d02846145241365dae\play-services-measurement-17.6.0\AndroidManifest.xml:29:9-33:20
+233            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+233-->[com.google.android.gms:play-services-measurement:17.6.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\40ed876d399ca5d02846145241365dae\play-services-measurement-17.6.0\AndroidManifest.xml:30:13-85
+234            android:enabled="true"
+234-->[com.google.android.gms:play-services-measurement:17.6.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\40ed876d399ca5d02846145241365dae\play-services-measurement-17.6.0\AndroidManifest.xml:31:13-35
+235            android:exported="false" >
+235-->[com.google.android.gms:play-services-measurement:17.6.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\40ed876d399ca5d02846145241365dae\play-services-measurement-17.6.0\AndroidManifest.xml:32:13-37
+236        </receiver>
+237
+238        <service
+238-->[com.google.android.gms:play-services-measurement:17.6.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\40ed876d399ca5d02846145241365dae\play-services-measurement-17.6.0\AndroidManifest.xml:35:9-38:40
+239            android:name="com.google.android.gms.measurement.AppMeasurementService"
+239-->[com.google.android.gms:play-services-measurement:17.6.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\40ed876d399ca5d02846145241365dae\play-services-measurement-17.6.0\AndroidManifest.xml:36:13-84
+240            android:enabled="true"
+240-->[com.google.android.gms:play-services-measurement:17.6.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\40ed876d399ca5d02846145241365dae\play-services-measurement-17.6.0\AndroidManifest.xml:37:13-35
+241            android:exported="false" />
+241-->[com.google.android.gms:play-services-measurement:17.6.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\40ed876d399ca5d02846145241365dae\play-services-measurement-17.6.0\AndroidManifest.xml:38:13-37
+242        <service
+242-->[com.google.android.gms:play-services-measurement:17.6.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\40ed876d399ca5d02846145241365dae\play-services-measurement-17.6.0\AndroidManifest.xml:39:9-43:72
+243            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+243-->[com.google.android.gms:play-services-measurement:17.6.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\40ed876d399ca5d02846145241365dae\play-services-measurement-17.6.0\AndroidManifest.xml:40:13-87
+244            android:enabled="true"
+244-->[com.google.android.gms:play-services-measurement:17.6.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\40ed876d399ca5d02846145241365dae\play-services-measurement-17.6.0\AndroidManifest.xml:41:13-35
+245            android:exported="false"
+245-->[com.google.android.gms:play-services-measurement:17.6.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\40ed876d399ca5d02846145241365dae\play-services-measurement-17.6.0\AndroidManifest.xml:42:13-37
+246            android:permission="android.permission.BIND_JOB_SERVICE" />
+246-->[com.google.android.gms:play-services-measurement:17.6.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\40ed876d399ca5d02846145241365dae\play-services-measurement-17.6.0\AndroidManifest.xml:43:13-69
+247
+248        <provider
+248-->[com.google.firebase:firebase-common:19.3.1] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\d503b0c4259cc437431abe247fad3dcb\jetified-firebase-common-19.3.1\AndroidManifest.xml:26:9-31:39
+249            android:name="com.google.firebase.provider.FirebaseInitProvider"
+249-->[com.google.firebase:firebase-common:19.3.1] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\d503b0c4259cc437431abe247fad3dcb\jetified-firebase-common-19.3.1\AndroidManifest.xml:27:13-77
+250            android:authorities="com.lawrencebanks.dealkarma.firebaseinitprovider"
+250-->[com.google.firebase:firebase-common:19.3.1] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\d503b0c4259cc437431abe247fad3dcb\jetified-firebase-common-19.3.1\AndroidManifest.xml:28:13-72
+251            android:directBootAware="true"
+251-->[com.google.firebase:firebase-common:19.3.1] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\d503b0c4259cc437431abe247fad3dcb\jetified-firebase-common-19.3.1\AndroidManifest.xml:29:13-43
+252            android:exported="false"
+252-->[com.google.firebase:firebase-common:19.3.1] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\d503b0c4259cc437431abe247fad3dcb\jetified-firebase-common-19.3.1\AndroidManifest.xml:30:13-37
+253            android:initOrder="100" /> <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
+253-->[com.google.firebase:firebase-common:19.3.1] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\d503b0c4259cc437431abe247fad3dcb\jetified-firebase-common-19.3.1\AndroidManifest.xml:31:13-36
+254        <activity
+254-->[com.google.android.gms:play-services-ads-lite:19.4.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\b4239c15836b98118d5b99da1b9cad2a\play-services-ads-lite-19.4.0\AndroidManifest.xml:29:9-33:64
+255            android:name="com.google.android.gms.ads.AdActivity"
+255-->[com.google.android.gms:play-services-ads-lite:19.4.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\b4239c15836b98118d5b99da1b9cad2a\play-services-ads-lite-19.4.0\AndroidManifest.xml:30:13-65
+256            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+256-->[com.google.android.gms:play-services-ads-lite:19.4.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\b4239c15836b98118d5b99da1b9cad2a\play-services-ads-lite-19.4.0\AndroidManifest.xml:31:13-122
+257            android:exported="false"
+257-->[com.google.android.gms:play-services-ads-lite:19.4.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\b4239c15836b98118d5b99da1b9cad2a\play-services-ads-lite-19.4.0\AndroidManifest.xml:32:13-37
+258            android:theme="@android:style/Theme.Translucent" />
+258-->[com.google.android.gms:play-services-ads-lite:19.4.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\b4239c15836b98118d5b99da1b9cad2a\play-services-ads-lite-19.4.0\AndroidManifest.xml:33:13-61
+259
+260        <provider
+260-->[com.google.android.gms:play-services-ads-lite:19.4.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\b4239c15836b98118d5b99da1b9cad2a\play-services-ads-lite-19.4.0\AndroidManifest.xml:35:9-39:39
+261            android:name="com.google.android.gms.ads.MobileAdsInitProvider"
+261-->[com.google.android.gms:play-services-ads-lite:19.4.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\b4239c15836b98118d5b99da1b9cad2a\play-services-ads-lite-19.4.0\AndroidManifest.xml:36:13-76
+262            android:authorities="com.lawrencebanks.dealkarma.mobileadsinitprovider"
+262-->[com.google.android.gms:play-services-ads-lite:19.4.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\b4239c15836b98118d5b99da1b9cad2a\play-services-ads-lite-19.4.0\AndroidManifest.xml:37:13-73
+263            android:exported="false"
+263-->[com.google.android.gms:play-services-ads-lite:19.4.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\b4239c15836b98118d5b99da1b9cad2a\play-services-ads-lite-19.4.0\AndroidManifest.xml:38:13-37
+264            android:initOrder="100" />
+264-->[com.google.android.gms:play-services-ads-lite:19.4.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\b4239c15836b98118d5b99da1b9cad2a\play-services-ads-lite-19.4.0\AndroidManifest.xml:39:13-36
+265
+266        <service
+266-->[com.google.android.gms:play-services-ads-lite:19.4.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\b4239c15836b98118d5b99da1b9cad2a\play-services-ads-lite-19.4.0\AndroidManifest.xml:41:9-44:40
+267            android:name="com.google.android.gms.ads.AdService"
+267-->[com.google.android.gms:play-services-ads-lite:19.4.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\b4239c15836b98118d5b99da1b9cad2a\play-services-ads-lite-19.4.0\AndroidManifest.xml:42:13-64
+268            android:enabled="true"
+268-->[com.google.android.gms:play-services-ads-lite:19.4.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\b4239c15836b98118d5b99da1b9cad2a\play-services-ads-lite-19.4.0\AndroidManifest.xml:43:13-35
+269            android:exported="false" />
+269-->[com.google.android.gms:play-services-ads-lite:19.4.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\b4239c15836b98118d5b99da1b9cad2a\play-services-ads-lite-19.4.0\AndroidManifest.xml:44:13-37
+270
+271        <meta-data
+271-->[com.google.android.gms:play-services-basement:17.3.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\0f7e66f871328bff285e827cf81c29fe\jetified-play-services-basement-17.3.0\AndroidManifest.xml:23:9-25:69
+272            android:name="com.google.android.gms.version"
+272-->[com.google.android.gms:play-services-basement:17.3.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\0f7e66f871328bff285e827cf81c29fe\jetified-play-services-basement-17.3.0\AndroidManifest.xml:24:13-58
+273            android:value="@integer/google_play_services_version" />
+273-->[com.google.android.gms:play-services-basement:17.3.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\0f7e66f871328bff285e827cf81c29fe\jetified-play-services-basement-17.3.0\AndroidManifest.xml:25:13-66
+274
+275        <provider
+275-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\4d1cde8720b41ed2ce4f090f1af0e86f\lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
+276            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+276-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\4d1cde8720b41ed2ce4f090f1af0e86f\lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
+277            android:authorities="com.lawrencebanks.dealkarma.lifecycle-process"
+277-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\4d1cde8720b41ed2ce4f090f1af0e86f\lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
+278            android:exported="false"
+278-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\4d1cde8720b41ed2ce4f090f1af0e86f\lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
+279            android:multiprocess="true" />
+279-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Reda El Ouahabi\.gradle\caches\transforms-2\files-2.1\4d1cde8720b41ed2ce4f090f1af0e86f\lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
+280    </application>
+281
+282</manifest>
