@@ -1,7 +1,9 @@
 import 'dart:async';
 import 'package:fire99/colorr.dart';
 import 'package:fire99/login.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -50,7 +52,7 @@ class _SplashScreen extends State<SplashScreen>
 
     Timer(Duration(seconds: 4), () {
       setState(() {
-        Navigator.pushReplacement(context, PageTransition(LoginScreen()));
+        //Navigator.pushReplacement(context, PageTransition(SplashScreen()));
       });
     });
   }
@@ -66,7 +68,44 @@ class _SplashScreen extends State<SplashScreen>
     double _width = MediaQuery.of(context).size.width;
     double _height = MediaQuery.of(context).size.height;
 
-    return Scaffold(
+    return
+      Scaffold(
+        body:
+        Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                colors: [
+                  Color(0xffA320D1),
+                  Color(0xff02E0FE),
+                ],
+              )
+          ),
+          child:
+          Stack(
+            children: [
+
+              Positioned(
+                    left: -_width/9,
+                   top:-_height/9,
+                  // width: 200,
+                  height: _height+_height/3,
+                  width: _width+_width/3,
+                  child:  Image.asset("assets/background.png")),
+Positioned(
+    top: _height/4,
+    left: _width/17,
+    child: Image.asset("assets/Saly-21.png") ),
+              Center(child: Image.asset("assets/appstore.png")),
+            ],
+          )
+
+
+    ),
+          );
+
+      /*Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
         children: [
@@ -108,8 +147,8 @@ class _SplashScreen extends State<SplashScreen>
                   borderRadius: BorderRadius.circular(30),
                 ),
                 child: Container(
-                  width: 300,
-    height: 300,
+                  width: double.infinity,
+    height: double.infinity,
     decoration: BoxDecoration(
     color: Colors.white,
     image: DecorationImage(
@@ -123,7 +162,7 @@ class _SplashScreen extends State<SplashScreen>
           ),
         ],
       ),
-    );
+    );*/
   }
 }
 
