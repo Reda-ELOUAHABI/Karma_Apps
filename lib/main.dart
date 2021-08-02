@@ -22,7 +22,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Splash Screen',
       theme: ThemeData(),
-      home: SplashScreen(),
+      home: LoginScreen(),
+     // home: SplashScreen(),
 
       routes: {LoginScreen.routeName: (context) => LoginScreen()},
       debugShowCheckedModeBanner: false,

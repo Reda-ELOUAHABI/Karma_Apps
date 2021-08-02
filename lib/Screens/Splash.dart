@@ -52,7 +52,7 @@ class _SplashScreen extends State<SplashScreen>
 
     Timer(Duration(seconds: 4), () {
       setState(() {
-        //Navigator.pushReplacement(context, PageTransition(SplashScreen()));
+        Navigator.pushReplacement(context, PageTransition(LoginScreen()));
       });
     });
   }
@@ -97,7 +97,8 @@ Positioned(
     top: _height/4,
     left: _width/17,
     child: Image.asset("assets/Saly-21.png") ),
-              Center(child: Image.asset("assets/appstore.png")),
+             // Center(child: Image.asset("assets/appstore.png")),
+              Center(child: Image.asset("assets/Group 598 1.png")),
             ],
           )
 
