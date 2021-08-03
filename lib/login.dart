@@ -278,7 +278,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     //     onPressed: null,
                                     //     child: Text("Forget Password"),
                                     // ),
-                                  )
+                                  ),
 
                                   // Container(
                                   //   height: _height,
@@ -291,6 +291,36 @@ class _LoginScreenState extends State<LoginScreen> {
                                   //   width: _width,
                                   //   color: Colors.blue,
                                   // ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      Container(
+                                        width: 60,
+                                        height: 60,
+                                        child: Image.asset("assets/images/facebook.png"),
+                                        decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            color: Color(0xFFe0f2f1)),
+                                      ),
+                                      Container(
+                                        width: 60,
+                                        height: 60,
+                                        child: Image.asset("assets/images/gmail-logo-2-1.png",width: _width/1000,),
+                                        decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            color: Color(0xFFe0f2f1)),
+                                      ),
+                                      Container(
+                                          width: 60,
+                                          height: 60,
+                                          child: Image.asset("assets/images/25231.png",),
+                                          decoration: BoxDecoration(
+                                              shape: BoxShape.circle,
+                                              color: Color(0xFFe0f2f1)),
+                          ),
+
+                                    ],
+                                  ),
                                 ],
                               ),
                             ),
@@ -348,6 +378,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     ],
                   ),
                 ),
+
+                //Banner Ads
                 Container(
                   width: _width,
                   height: _height / 13,
