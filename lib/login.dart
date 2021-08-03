@@ -92,6 +92,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           width: _width / 1.1,
                           left: _width / 20,
                           top: _height / 10,
+
                           /*  left: -_width / 9,
                           top: -_height / 9,*/
 
@@ -103,12 +104,13 @@ class _LoginScreenState extends State<LoginScreen> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
 
-
+                                  SizedBox(height:40 ,),
 
                                   Padding(
                                 padding: const EdgeInsets.only(
                                   left: 10,
                                   right: 10,
+                                  
                                 ),
                                 child: Container(
                                //Container for box shadow + blur
@@ -241,21 +243,88 @@ class _LoginScreenState extends State<LoginScreen> {
 
                                   //Forget Password btn
                                   Padding(
-                                    padding: const EdgeInsets.only(left: 200),
+                                    padding: const EdgeInsets.only(
+                                        left: 200,
+                                    right: 10,
+                                    ),
                                     child:
                                     Container(
-                                      margin: EdgeInsets.all(10),
-                                      height: 50.0,
+                                      margin: EdgeInsets.all(1),
+                                      height: 30.0,
+                                      width: 200,
                                       decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(100),
                                         boxShadow: <BoxShadow>[
                                           BoxShadow(
-                                            color: Colors.blue.withOpacity(0.1),
-                                            blurRadius: 1,
-                                            offset: Offset(10, 10),
+                                            color: Color(0xff383838).withOpacity(0.5),
+                                            //color: Colors.grey.withOpacity(0.1),
+                                            blurRadius: 10,
+                                            offset: Offset(-10, 10),
                                           ),
                                         ],
                                       ),
-                                      child: RaisedButton(
+                                      child:
+                                      ElevatedButton(
+                                        onPressed: () {
+                                          // Respond to button press
+                                        },
+                                        child: Text("forgot password",style: TextStyle(
+
+                                          shadows: <Shadow>[
+                                            Shadow(
+                                              offset: Offset(-10.0, 5.0),
+                                              blurRadius: 3.0,
+                                              color: Color(0xff89898e),
+                                            ),
+                                            /*Shadow(
+                                              offset: Offset(10.0, 10.0),
+                                              blurRadius: 8.0,
+                                              color: Color.fromARGB(125, 0, 0, 255),
+                                            ),*/
+                                          ],
+
+                                        ),),
+                                        style:
+                                        ButtonStyle(
+
+                                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                                RoundedRectangleBorder(
+
+                                                    borderRadius: BorderRadius.circular(18.0),
+                                                    side: BorderSide(color: Colors.grey),
+
+                                                ),
+
+                                            ),
+                                          backgroundColor:
+                                          MaterialStateProperty.all<Color>(Color(
+                                              0xff8B669C)),
+                                        ),
+                                        // ElevatedButton.styleFrom(
+                                        //    primary: Colors.grey,
+                                        //   // set the background color
+                                        //   // Color onPrimary,
+                                        //   // Color onSurface,
+                                        //   // Color shadowColor,
+                                        //   // double elevation,
+                                        //   // TextStyle textStyle,
+                                        //   // EdgeInsetsGeometry padding,
+                                        //   // Size minimumSize,
+                                        //   // BorderSide side,
+                                        //   // OutlinedBorder shape,
+                                        //   // MouseCursor enabledMouseCursor,
+                                        //   // MouseCursor disabledMouseCursor,
+                                        //   // VisualDensity visualDensity,
+                                        //   // MaterialTapTargetSize tapTargetSize,
+                                        //   // Duration animationDuration,
+                                        //   // bool enableFeedback
+                                        // ),
+
+
+                                      ),
+
+
+                                     /* RaisedButton(
                                         elevation: 30,
                                         shape: RoundedRectangleBorder(
                                             borderRadius: BorderRadius.circular(16.0),
@@ -273,6 +342,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                             //"Shadow Butoon".toUpperCase(),
                                             style: TextStyle(fontSize: 15)),
                                       ),
+                                    */
+
                                     ),
                                     // TextButton(
                                     //     onPressed: null,
@@ -291,35 +362,47 @@ class _LoginScreenState extends State<LoginScreen> {
                                   //   width: _width,
                                   //   color: Colors.blue,
                                   // ),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      Container(
-                                        width: 60,
-                                        height: 60,
-                                        child: Image.asset("assets/images/facebook.png"),
-                                        decoration: BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            color: Color(0xFFe0f2f1)),
-                                      ),
-                                      Container(
-                                        width: 60,
-                                        height: 60,
-                                        child: Image.asset("assets/images/gmail-logo-2-1.png",width: _width/1000,),
-                                        decoration: BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            color: Color(0xFFe0f2f1)),
-                                      ),
-                                      Container(
+                                 /* SizedBox(
+                                    height: 50,
+                                  ),*/
+                                  Container(
+                                  /*  margin: EdgeInsets.only(
+
+                                    ),*/
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                      children: [
+
+                                        Container(
+                                          // margin: EdgeInsets.only(
+                                          //
+                                          // ),
                                           width: 60,
                                           height: 60,
-                                          child: Image.asset("assets/images/25231.png",),
+                                          child: Image.asset("assets/images/facebook.png"),
                                           decoration: BoxDecoration(
                                               shape: BoxShape.circle,
                                               color: Color(0xFFe0f2f1)),
+                                        ),
+                                        Container(
+                                          width: 60,
+                                          height: 60,
+                                          child: Image.asset("assets/images/gmail-02 (1) 1.png",width: _width/1000,),
+                                          decoration: BoxDecoration(
+                                              shape: BoxShape.circle,
+                                              color: Color(0xFFe0f2f1)),
+                                        ),
+                                        Container(
+                                            width: 60,
+                                            height: 60,
+                                            child: Image.asset("assets/images/25231.png",),
+                                            decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                color: Color(0xFFe0f2f1)),
                           ),
 
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ],
                               ),
