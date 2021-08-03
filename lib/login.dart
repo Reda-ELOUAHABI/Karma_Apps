@@ -58,87 +58,100 @@ class _LoginScreenState extends State<LoginScreen> {
         backgroundColor: Colors.white,
         body: SafeArea(
           child: Column(
-
             children: <Widget>[
               Container(
-                  width: _width,
-            height: _height / 13,
-                  child: Center(
-                      child: Text(
-                    "Banner Adds",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                    ),
-                  )),
-                  decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                    begin: Alignment.topRight,
-                    end: Alignment.bottomLeft,
-                    colors: [
-                      Color(0xffA903F8),
-                      Color(0xffF805A5).withOpacity(0.29),
-                    ],
-                  )),
-                  //Like the pourcentage exactly
-                 ),
-
+                width: _width,
+                height: _height / 13,
+                child: Center(
+                    child: Text(
+                  "Banner Adds",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                  ),
+                )),
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                  begin: Alignment.topRight,
+                  end: Alignment.bottomLeft,
+                  colors: [
+                    Color(0xffA903F8),
+                    Color(0xffF805A5).withOpacity(0.29),
+                  ],
+                )),
+                //Like the pourcentage exactly
+              ),
               Container(
-                height: _height*0.8,
+                height: _height * 0.8,
                 child: Stack(
                   // fit: BoxFit.cover,
                   children: [
                     Positioned(
                         height: _height / 2.3,
                         width: _width / 1.1,
-                        left: _width/20,
-                      top: _height/10,
-                      /*  left: -_width / 9,
+                        left: _width / 20,
+                        top: _height / 10,
+                        /*  left: -_width / 9,
                         top: -_height / 9,*/
 
                         child: Container(
                           child: Form(
                             key: _formkey,
                             child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
+                           /* TextFormField(
+                            decoration: InputDecoration(
+                            border: UnderlineInputBorder(),
+                              labelText: 'User name',
+                              hintStyle: TextStyle(
+                                fontSize: 15,
+                                color: Colors.white,
+                              ),
+                          ),
+                        ),*/
+
 
                                 TextFormField(
                                   //Email/
+
                                   controller: _emailcontroller,
                                   cursorColor: Colors.purple,
-                                  style: TextStyle(fontSize: 18, color: Colors.black),
+                                  // style: TextStyle(
+                                  // fontSize: 18, color: Colors.black),
                                   decoration: InputDecoration(
                                     hoverColor: Colors.deepPurple,
-                                    labelText: ' Email',
-                                    hintText: 'Enter your email ',
+                                   // labelText: ' Email',
+                                    hintText: 'User name',
                                     focusedBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
                                           color: Colors.deepPurple, width: 2.0),
                                       borderRadius: BorderRadius.circular(30.0),
                                     ),
                                     enabledBorder: UnderlineInputBorder(
-                                      borderSide: BorderSide(color: Colors.white),
+                                      borderSide:
+                                          BorderSide(color: Colors.white),
                                       borderRadius: BorderRadius.circular(30.0),
                                     ),
                                     border: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(30.0),
+                                        borderRadius:
+                                            BorderRadius.circular(30.0),
                                         borderSide: BorderSide()),
                                     // fillColor: Colors.white,
-                                    filled: true,
-                                    fillColor: Colors.white,
+                                    // filled: true,
+                                    // fillColor: Colors.white,
 
                                     hintStyle: TextStyle(
                                       fontSize: 15,
                                       color: Colors.white,
                                     ),
-                                    labelStyle: TextStyle(
-                                      fontSize: 18,
-                                      color: Colors.deepPurple,
-                                    ),
-                                    prefixIcon:
-                                    Icon(Icons.lock, color: Colors.deepPurple),
+                                    // labelStyle: TextStyle(
+                                    //   fontSize: 18,
+                                    //   color: Colors.deepPurple,
+                                    // ),
+                                    // prefixIcon: Icon(Icons.lock,
+                                    //     color: Colors.deepPurple),
                                   ),
                                   validator: (value) {
                                     if (value.isEmpty) {
@@ -153,7 +166,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                   cursorColor: Colors.deepPurple,
                                   obscureText: true,
                                   controller: _passwordcontroller,
-                                  style: TextStyle(fontSize: 18, color: Colors.black),
+                                  style: TextStyle(
+                                      fontSize: 18, color: Colors.black),
                                   decoration: InputDecoration(
                                     labelText: ' Password',
                                     hintText: 'Enter your password ',
@@ -163,11 +177,13 @@ class _LoginScreenState extends State<LoginScreen> {
                                       borderRadius: BorderRadius.circular(30.0),
                                     ),
                                     enabledBorder: UnderlineInputBorder(
-                                      borderSide: BorderSide(color: Colors.white),
+                                      borderSide:
+                                          BorderSide(color: Colors.white),
                                       borderRadius: BorderRadius.circular(30.0),
                                     ),
                                     border: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(30.0),
+                                        borderRadius:
+                                            BorderRadius.circular(3.0),
                                         borderSide: BorderSide()),
                                     // fillColor: Colors.white,
                                     filled: true,
@@ -181,8 +197,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                       fontSize: 18,
                                       color: Colors.deepPurple,
                                     ),
-                                    prefixIcon:
-                                    Icon(Icons.lock, color: Colors.deepPurple),
+                                    prefixIcon: Icon(Icons.lock,
+                                        color: Colors.deepPurple),
                                   ),
                                   validator: (value) {
                                     if (value.isEmpty) {
@@ -191,10 +207,45 @@ class _LoginScreenState extends State<LoginScreen> {
                                     return null;
                                   },
                                 ),
-Padding(
-  padding: const EdgeInsets.only(left:200),
-  child:   TextButton(onPressed: null, child: Text("Forget Password")),
-)
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 200),
+                                  child:
+                                  Container(
+                                    margin: EdgeInsets.all(10),
+                                    height: 50.0,
+                                    decoration: BoxDecoration(
+                                      boxShadow: <BoxShadow>[
+                                        BoxShadow(
+                                          color: Colors.blue.withOpacity(0.1),
+                                          blurRadius: 1,
+                                          offset: Offset(10, 10),
+                                        ),
+                                      ],
+                                    ),
+                                    child: RaisedButton(
+                                      elevation: 30,
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(16.0),
+                                          side: BorderSide(color:
+
+                                          Color.fromRGBO(
+                                              78, 78, 78, 1.0))),
+                                      onPressed: () {},
+                                      padding: EdgeInsets.all(10.0),
+                                      color: Color.fromRGBO(
+                                          102, 102, 102, 0.8941176470588236),
+                                      textColor: Colors.white,
+                                      child: Text(
+                                          "forget password",
+                                          //"Shadow Butoon".toUpperCase(),
+                                          style: TextStyle(fontSize: 15)),
+                                    ),
+                                  ),
+                                  // TextButton(
+                                  //     onPressed: null,
+                                  //     child: Text("Forget Password"),
+                                  // ),
+                                )
 
                                 // Container(
                                 //   height: _height,
@@ -207,32 +258,33 @@ Padding(
                                 //   width: _width,
                                 //   color: Colors.blue,
                                 // ),
-
                               ],
                             ),
                           ),
 
                           decoration: BoxDecoration(
-                            //Only some corners
-                            // borderRadius: BorderRadius.only(
-                            //     topLeft: Radius.circular(15),
-                            //     bottomLeft: Radius.circular(15)),
-                            
-                            borderRadius: BorderRadius.all(Radius.circular(16)),
+                              //Only some corners
+                              // borderRadius: BorderRadius.only(
+                              //     topLeft: Radius.circular(15),
+                              //     bottomLeft: Radius.circular(15)),
 
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(16)),
                               border: Border
-                             /*Sol 1*/
-                              //   (
-                             //   top: BorderSide( color: Color(0xFFDFDFDF)),
-                             //   left: BorderSide( color: Color( 0xFFDB60CA)),
-                             //   right: BorderSide( color: Color(0xFFDB60CA)),
-                             //   bottom: BorderSide( color: Color(
-                             //       0xFFB508E2)),
-                             // ),
+                                  /*Sol 1*/
+                                  //   (
+                                  //   top: BorderSide( color: Color(0xFFDFDFDF)),
+                                  //   left: BorderSide( color: Color( 0xFFDB60CA)),
+                                  //   right: BorderSide( color: Color(0xFFDB60CA)),
+                                  //   bottom: BorderSide( color: Color(
+                                  //       0xFFB508E2)),
+                                  // ),
 /*Sol 2*/
 
-                                  .all(width: 2.0, color: const Color(0xFFFFFFFF)),
-                           // color: Colors.deepPurple,
+                                  .all(
+                                      width: 2.0,
+                                      color: const Color(0xFFFFFFFF)),
+                              // color: Colors.deepPurple,
                               boxShadow: [
                                 BoxShadow(
                                   color: Color(0xff3965fa),
@@ -268,25 +320,23 @@ Padding(
                 height: _height / 13,
                 child: Center(
                     child: Text(
-                      "Banner Adds",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                      ),
-                    )),
+                  "Banner Adds",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                  ),
+                )),
                 decoration: BoxDecoration(
                     gradient: LinearGradient(
-                      begin: Alignment.topRight,
-                      end: Alignment.bottomLeft,
-                      colors: [
-                        Color(0xffA903F8),
-                        Color(0xffF805A5).withOpacity(0.29),
-                      ],
-                    )),
+                  begin: Alignment.topRight,
+                  end: Alignment.bottomLeft,
+                  colors: [
+                    Color(0xffA903F8),
+                    Color(0xffF805A5).withOpacity(0.29),
+                  ],
+                )),
                 //Like the pourcentage exactly
               ),
-
-
             ],
           ),
         ));
