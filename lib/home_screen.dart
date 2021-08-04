@@ -3,6 +3,7 @@ import 'package:fire99/Helpers/alarm_manager.dart';
 import 'package:fire99/Screens/alarm_screen.dart';
 import 'package:fire99/addpost.dart';
 import 'package:fire99/catlog.dart';
+import 'package:fire99/colorr.dart';
 import 'package:fire99/licences.dart';
 import 'package:fire99/log3.dart';
 import 'package:fire99/profile.dart';
@@ -15,340 +16,495 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:page_transition/page_transition.dart';
 
 class HomeScreen extends StatefulWidget {
-
-
   _HomeScreenState createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    double _width = MediaQuery.of(context).size.width;
+    double _height = MediaQuery.of(context).size.height;
     // to get size
     var size = MediaQuery.of(context).size;
 
     // style
-    var cardTextStyle = TextStyle(
+    var cardTextStyle =
+        TextStyle(fontSize: 14, color: Color.fromRGBO(63, 63, 63, 1));
+
+    return
+
+      Scaffold(
+        body: SafeArea(
+       child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              width: _width,
+              height: _height / 19,
+              child: Center(
+                  child:
+              SizedBox()
+              ),
 
 
-        fontSize: 14,
-        color: Color.fromRGBO(63, 63, 63, 1));
-
-    return Scaffold(
-      body: Stack(
-        children: <Widget>[
-          Container(
-            height: size.height * .3,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                  alignment: Alignment.topCenter,
-                  image: AssetImage('assets/d3.png')),
+              //Like the pourcentage exactly
             ),
-          ),
-          SafeArea(
-            child: Padding(
-              padding: EdgeInsets.all(16.0),
-              child: Column(
-                children: <Widget>[
-                  Container(
-                    height: 64,
-                    margin: EdgeInsets.only(bottom: 20),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        CircleAvatar(
-                          radius: 32,
-                          backgroundImage: AssetImage(
-                              'assets/home2.png'
-                          ),
-                        ),
-                        SizedBox(
-                          width: 16,
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Text(
-                              r"""DK's Dashboard""",
-                              style: TextStyle(
+            Container(
+              height: _height * 0.8,
+              child: Stack(
+                // fit: BoxFit.cover,
+                children: [
+                  Positioned(
+                      height: _height / 1.6,
+                      width: _width / 1.1,
+                      left: _width / 20,
+                      top: _height / 10 + 4,
 
-                                  color: Colors.white,
-                                  fontSize: 20),
-                            ),
+                      /*  left: -_width / 9,
+                          top: -_height / 9,*/
 
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                    child: GridView.count(
-                      mainAxisSpacing: 10,
-                      crossAxisSpacing: 10,
-                      primary: false,
-                      crossAxisCount: 2,
-                      children: <Widget>[
-                        InkWell(
-                          child: Card(
-                            shape:RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8)
+                      child: Container(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            SizedBox(
+                              height: 40,
                             ),
-                            elevation: 4,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                              Image.asset(
-                                'assets/c1.jpg'
-                                    ,height: 128,
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                left: 10,
+                                right: 10,
                               ),
-                                Text(
-                                  'My Profile ',
-                                  style: cardTextStyle,
-                                )
-                              ],
-                            ),
-                          ),
-                          onTap: (){
-
-                          },
-                        ),
-
-                        InkWell(
-                          child: Card(
-                            shape:RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8)
-                            ),
-                            elevation: 4,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Image.asset(
-                                    'assets/c2.png',
-height: 128,
-
+                              child: Container(
+                                //Container for box shadow + blur
+                                decoration: BoxDecoration(
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Color(0xffffffff).withOpacity(0.3),
+                                      blurRadius: 7,
+                                      spreadRadius: 1,
+                                      offset: Offset(0, 4), // Shadow position
+                                    ),
+                                  ],
                                 ),
-                                Text(
-                                  ' Ads Waterfall ',
-                                  style: cardTextStyle,
-                                )
-                              ],
-                            ),
-                          ),
-                          onTap: (){}
-                        ),
 
-                        InkWell(
-                          child: Card(
-                            shape:RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8)
-                            ),
-                            elevation: 4,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Image.asset(
-                                  'assets/rr.gif'
-                                  ,height: 128,
-                                ),
-                                Text(
-                                  'Reminders ',
-                                  style: cardTextStyle,
-                                )
-                              ],
-                            ),
-                          ),
-                          onTap: (){Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => AlarmScreen()),//navigation
-                          );},
-                        ),
+                                //Material fox box shadow 2
+                                child: ElevatedButton(
+                                  onPressed: () async {
+                                    final user = FirebaseAuth.instance.currentUser;
+                                    final userData = await FirebaseFirestore.instance
+                                        .collection('users')
+                                        .doc(user.uid)
+                                        .get();
+                                    String ud = userData['username'];
 
-                        InkWell(
-                          child: Card(
-                            shape:RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8)
-                            ),
-                            elevation: 4,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Image.asset(
-                                  'assets/c44.png'
-                                  ,height: 128,
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                          return AddPost(ud);
+                                        }));
+                                  },
+                                  child: Text(
+                                    "VIDEOS",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 25,
+                                      letterSpacing: 10,
+                                      shadows: <Shadow>[
+                                        Shadow(
+                                          offset: Offset(-10.0, 5.0),
+                                          blurRadius: 10.0,
+                                          color: Color(0xff000000)
+                                              .withOpacity(0.5),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  style: ButtonStyle(
+                                    shape: MaterialStateProperty.all<
+                                        RoundedRectangleBorder>(
+                                      RoundedRectangleBorder(
+                                        //borderRadius: BorderRadius.circular(18.0),
+                                        side: BorderSide(color: Colors.white),
+                                      ),
+                                    ),
+                                    backgroundColor:
+                                        MaterialStateProperty.all<Color>(
+                                            Color(0xff8B669C).withOpacity(1)),
+                                  ),
                                 ),
-                                Text(
-                                  'Take A Survey ',
-                                  style: cardTextStyle,
-                                )
-                              ],
+                              ),
                             ),
-                          ),
-                          onTap: (){
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) {
-                                  return survey();
-                                }));
-                          },
-                        ),
-                         InkWell(
-                          child: Card(
-                            shape:RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8)
-                            ),
-                            elevation: 4,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Image.asset(
-                                  'assets/c44.png'
-                                  ,height: 128,
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                left: 10,
+                                right: 10,
+                              ),
+                              child: Container(
+                                //Container for box shadow + blur
+                                decoration: BoxDecoration(
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Color(0xffffffff).withOpacity(0.3),
+                                      blurRadius: 7,
+                                      spreadRadius: 1,
+                                      offset: Offset(0, 4), // Shadow position
+                                    ),
+                                  ],
                                 ),
-                                Text(
-                                  ' Add  ',
-                                  style: cardTextStyle,
-                                )
-                              ],
-                            ),
-                          ),
-                          onTap: () async {
-                         final user = FirebaseAuth.instance.currentUser;
-                    final userData = await FirebaseFirestore.instance.collection('users').doc(user.uid).get();
-                    String ud=userData['username'];
 
-                             Navigator.push(
-                                      context,
-                              MaterialPageRoute(builder: (context) {
-                                return AddPost(ud);
-                              }));
-                          },
-                        ),
+                                //Material fox box shadow 2
+                                child: ElevatedButton(
+                                  onPressed: () async {
+                                    final user = FirebaseAuth.instance.currentUser;
+                                    final userData = await FirebaseFirestore.instance
+                                        .collection('users')
+                                        .doc(user.uid)
+                                        .get();
+                                    String ud = userData['username'];
 
-                        InkWell(
-                          child: Card(
-                            shape:RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8)
-                            ),
-                            elevation: 4,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Image.asset(
-                                  'assets/c5.png'
-                                  ,height: 128,
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                          return licences(ud);
+                                        }));
+                                  },
+                                  child: Text(
+                                    "REWARDED VIDEOS ",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20,
+                                      letterSpacing: 7,
+                                      shadows: <Shadow>[
+                                        Shadow(
+                                          offset: Offset(-10.0, 5.0),
+                                          blurRadius: 10.0,
+                                          color: Color(0xff000000)
+                                              .withOpacity(0.5),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  style: ButtonStyle(
+                                    shape: MaterialStateProperty.all<
+                                        RoundedRectangleBorder>(
+                                      RoundedRectangleBorder(
+                                        //borderRadius: BorderRadius.circular(18.0),
+                                        side: BorderSide(color: Colors.white),
+                                      ),
+                                    ),
+                                    backgroundColor:
+                                        MaterialStateProperty.all<Color>(
+                                            Color(0xff8B669C).withOpacity(1)),
+                                  ),
                                 ),
-                                Text(
-                                  'Catalog ',
-                                  style: cardTextStyle,
-                                )
-                              ],
+                              ),
                             ),
-                          ),
-                          onTap: () async {
-                                final user = FirebaseAuth.instance.currentUser;
-                    final userData = await FirebaseFirestore.instance.collection('users').doc(user.uid).get();
-                    String ud=userData['username'];
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                left: 10,
+                                right: 10,
+                              ),
+                              child: Container(
+                                //Container for box shadow + blur
+                                decoration: BoxDecoration(
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Color(0xffffffff).withOpacity(0.3),
+                                      blurRadius: 7,
+                                      spreadRadius: 1,
+                                      offset: Offset(0, 4), // Shadow position
+                                    ),
+                                  ],
+                                ),
 
-                              Navigator.push(
-                                      context,
-                              MaterialPageRoute(builder: (context) {
-                                return  PostsScreen(ud);
-                              }));
-                          },
-                        ),
+                                //Material fox box shadow 2
+                                child: ElevatedButton(
+                                  onPressed: () {
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                          return survey();
+                                        }));
+                                  },
+                                  child: Text(
+                                    "SURVEYS",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 25,
+                                      letterSpacing: 10,
+                                      shadows: <Shadow>[
+                                        Shadow(
+                                          offset: Offset(-10.0, 5.0),
+                                          blurRadius: 10.0,
+                                          color: Color(0xff000000)
+                                              .withOpacity(0.5),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  style: ButtonStyle(
+                                    shape: MaterialStateProperty.all<
+                                        RoundedRectangleBorder>(
+                                      RoundedRectangleBorder(
+                                        //borderRadius: BorderRadius.circular(18.0),
+                                        side: BorderSide(color: Colors.white),
+                                      ),
+                                    ),
+                                    backgroundColor:
+                                        MaterialStateProperty.all<Color>(
+                                            Color(0xff8B669C).withOpacity(1)),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                left: 10,
+                                right: 10,
+                              ),
+                              child: Container(
+                                //Container for box shadow + blur
+                                decoration: BoxDecoration(
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Color(0xffffffff).withOpacity(0.3),
+                                      blurRadius: 7,
+                                      spreadRadius: 1,
+                                      offset: Offset(0, 4), // Shadow position
+                                    ),
+                                  ],
+                                ),
 
-                        InkWell(
-                          child: Card(
-                            shape:RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8)
-                            ),
-                            elevation: 4,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Image.asset(
-                                  'assets/c6.png'
-                                  ,height: 128,
-                                ),
-                                Text(
-                                  'App Guide ',
-                                  style: cardTextStyle,
-                                )
-                              ],
-                            ),
-                          ),
-                          onTap: (){},
-                        ),
-                        InkWell(
-                          child: Card(
-                            shape:RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8)
-                            ),
-                            elevation: 4,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Image.asset(
-                                  'assets/c6.png'
-                                  ,height: 128,
-                                ),
-                                Text(
-                                  'Licences',
-                                  style: cardTextStyle,
-                                )
-                              ],
-                            ),
-                          ),
-                          onTap: () async {
-                            final user = FirebaseAuth.instance.currentUser;
-                            final userData = await FirebaseFirestore.instance.collection('users').doc(user.uid).get();
-                            String ud=userData['username'];
+                                //Material fox box shadow 2
+                                child: ElevatedButton(
+                                  onPressed: () async {
+                                    final user = FirebaseAuth.instance.currentUser;
+                                    final userData = await FirebaseFirestore.instance
+                                        .collection('users')
+                                        .doc(user.uid)
+                                        .get();
+                                    String ud = userData['username'];
 
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) {
-                                  return licences(ud);
-                                }));
-                          },
-                        ),
-                        InkWell(
-                          child: Card(
-                            shape:RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8)
-                            ),
-                            elevation: 4,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Image.asset(
-                                  'assets/c6.png'
-                                  ,height: 128,
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                          return PostsScreen(ud);
+                                        }));
+                                  },
+                                  child: Text(
+                                    "CATALOGUE",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 25,
+                                      letterSpacing: 10,
+                                      shadows: <Shadow>[
+                                        Shadow(
+                                          offset: Offset(-10.0, 5.0),
+                                          blurRadius: 10.0,
+                                          color: Color(0xff000000)
+                                              .withOpacity(0.5),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  style: ButtonStyle(
+                                    shape: MaterialStateProperty.all<
+                                        RoundedRectangleBorder>(
+                                      RoundedRectangleBorder(
+                                        //borderRadius: BorderRadius.circular(18.0),
+                                        side: BorderSide(color: Colors.white),
+                                      ),
+                                    ),
+                                    backgroundColor:
+                                        MaterialStateProperty.all<Color>(
+                                            Color(0xff8B669C).withOpacity(1)),
+                                  ),
                                 ),
-                                Text(
-                                  'See All licences(for admin only) ',
-                                  style: cardTextStyle,
-                                )
-                              ],
+                              ),
                             ),
-                          ),
-                          onTap: (){
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) {
-                                  return LoginScreen3();
-                                }));
-                          },
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                left: 10,
+                                right: 10,
+                              ),
+                              child: Container(
+                                //Container for box shadow + blur
+                                decoration: BoxDecoration(
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Color(0xffffffff).withOpacity(0.3),
+                                      blurRadius: 7,
+                                      spreadRadius: 1,
+                                      offset: Offset(0, 4), // Shadow position
+                                    ),
+                                  ],
+                                ),
+
+                                //Material fox box shadow 2
+                                child: ElevatedButton(
+                                  onPressed: () {
+                                    // Respond to button press
+                                  },
+                                  child: Text(
+                                    "WALLET",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 25,
+                                      letterSpacing: 10,
+                                      shadows: <Shadow>[
+                                        Shadow(
+                                          offset: Offset(-10.0, 5.0),
+                                          blurRadius: 10.0,
+                                          color: Color(0xff000000)
+                                              .withOpacity(0.5),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  style: ButtonStyle(
+                                    shape: MaterialStateProperty.all<
+                                        RoundedRectangleBorder>(
+                                      RoundedRectangleBorder(
+                                        //borderRadius: BorderRadius.circular(18.0),
+                                        side: BorderSide(color: Colors.white),
+                                      ),
+                                    ),
+                                    backgroundColor:
+                                        MaterialStateProperty.all<Color>(
+                                            Color(0xff8B669C).withOpacity(1)),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                left: 10,
+                                right: 10,
+                              ),
+                              child: Container(
+                                //Container for box shadow + blur
+                                decoration: BoxDecoration(
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Color(0xffffffff).withOpacity(0.3),
+                                      blurRadius: 7,
+                                      spreadRadius: 1,
+                                      offset: Offset(0, 4), // Shadow position
+                                    ),
+                                  ],
+                                ),
+
+                                //Material fox box shadow 2
+                                child: ElevatedButton(
+                                  onPressed: () async {
+                                    final user = FirebaseAuth.instance.currentUser;
+                                    final userData = await FirebaseFirestore.instance
+                                        .collection('users')
+                                        .doc(user.uid)
+                                        .get();
+                                    String ud = userData['username'];
+
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                          return Profile(ud);
+                                        }));
+                                  },
+                                  child: Text(
+                                    "PROFILE",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 25,
+                                      letterSpacing: 10,
+                                      shadows: <Shadow>[
+                                        Shadow(
+                                          offset: Offset(-10.0, 5.0),
+                                          blurRadius: 10.0,
+                                          color: Color(0xff000000)
+                                              .withOpacity(0.5),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  style: ButtonStyle(
+                                    shape: MaterialStateProperty.all<
+                                        RoundedRectangleBorder>(
+                                      RoundedRectangleBorder(
+                                        //borderRadius: BorderRadius.circular(18.0),
+                                        side: BorderSide(color: Colors.white),
+                                      ),
+                                    ),
+                                    backgroundColor:
+                                        MaterialStateProperty.all<Color>(
+                                            Color(0xff8B669C).withOpacity(1)),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
+                        //The box itself
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(16)),
+                            border: Border.all(
+                                width: 2.0, color: const Color(0xFFFFFFFF)),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Color(0xff3965fa),
+                                blurRadius: 16,
+                                spreadRadius: 10,
+                                //offset: Offset(4, 8), // Shadow position
+                              ),
+                            ],
+                            gradient: LinearGradient(
+                              begin: Alignment.topRight,
+                              end: Alignment.bottomLeft,
+                              colors: [
+                                Color(0xffFD067D).withOpacity(0.9),
+                                Color(0xff4200FF).withOpacity(0.65),
+                              ],
+                            )),
+                        //color: Colors.red,
+                      )),
+                  Positioned(
+                    top: 10,
+                    //  height: _height,
+                    child: Container(
+                      width: 400,
+                      height: 150,
+                      color: Colors.lightBlueAccent[300],
+                      child: Image.asset('assets/Group 598 1.png'),
                     ),
                   ),
                 ],
               ),
             ),
-          ),
-        ],
+
+            //Banner Ads
+            Container(
+              width: _width,
+              height: _height / 13,
+              child: Center(
+                  child: Text(
+                "Banner Adds",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                ),
+              )),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topRight,
+                  end: Alignment.bottomLeft,
+                  colors: [
+                    Color(0xffA903F8),
+                    Color(0xffF805A5).withOpacity(0.29),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
-    );
+    ));
   }
 }

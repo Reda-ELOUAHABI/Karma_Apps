@@ -375,6 +375,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             //color: Colors.red,
                           )),
                       Positioned(
+                        top: 10,
                         //  height: _height,
                         child: Container(
                           width: 400,
@@ -387,7 +388,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
                       Positioned(
 
-                        child: Padding(
+                        child:
+                        Padding(
                           padding: const EdgeInsets.only( top: 430),
                           child: Container(
                             /*  margin: EdgeInsets.only(
