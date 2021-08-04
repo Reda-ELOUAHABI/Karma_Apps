@@ -365,45 +365,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                  /* SizedBox(
                                     height: 50,
                                   ),*/
-                                  Container(
-                                  /*  margin: EdgeInsets.only(
 
-                                    ),*/
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                      children: [
-
-                                        Container(
-                                          // margin: EdgeInsets.only(
-                                          //
-                                          // ),
-                                          width: 60,
-                                          height: 60,
-                                          child: Image.asset("assets/images/facebook.png"),
-                                          decoration: BoxDecoration(
-                                              shape: BoxShape.circle,
-                                              color: Color(0xFFe0f2f1)),
-                                        ),
-                                        Container(
-                                          width: 60,
-                                          height: 60,
-                                          child: Image.asset("assets/images/gmail-02 (1) 1.png",width: _width/1000,),
-                                          decoration: BoxDecoration(
-                                              shape: BoxShape.circle,
-                                              color: Color(0xFFe0f2f1)),
-                                        ),
-                                        Container(
-                                            width: 60,
-                                            height: 60,
-                                            child: Image.asset("assets/images/25231.png",),
-                                            decoration: BoxDecoration(
-                                                shape: BoxShape.circle,
-                                                color: Color(0xFFe0f2f1)),
-                          ),
-
-                                      ],
-                                    ),
-                                  ),
                                 ],
                               ),
                             ),
@@ -459,6 +421,80 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
 
+
+                      Positioned(
+
+                        child: Padding(
+                          padding: const EdgeInsets.only( top: 430),
+                          child: Container(
+                            /*  margin: EdgeInsets.only(
+
+                                        ),*/
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+
+                                Container(
+                                  // margin: EdgeInsets.only(
+                                  //
+                                  // ),
+                                  width: 60,
+                                  height: 60,
+                                  child: Image.asset("assets/images/facebook.png"),
+                                  decoration: BoxDecoration(
+
+                                      shape: BoxShape.circle,
+                                      color: Color(0xFFe0f2f1),
+                                  boxShadow:  <BoxShadow>[
+                                  BoxShadow(
+                                  color: Color(0xffAD23DD).withOpacity(0.5),
+                              //color: Colors.grey.withOpacity(0.1),
+                              blurRadius: 10,
+                              offset: Offset(-10, 10),
+                            ),
+                                 ]
+                                  ),
+                                ),
+                                Container(
+                                  width: 60,
+                                  height: 60,
+                                  child: Image.asset("assets/images/gmail-02 (1) 1.png",width: _width/1000,),
+                                  decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Color(0xFFe0f2f1),
+                                      boxShadow:  <BoxShadow>[
+                                  BoxShadow(
+                                  color: Color(0xffAD23DD).withOpacity(0.5),
+                                  //color: Colors.grey.withOpacity(0.1),
+                                  blurRadius: 10,
+                                  offset: Offset(-10, 10),
+                                ),
+                              ]
+                                  ),
+                                ),
+                                Container(
+                                  width: 60,
+                                  height: 60,
+                                  child: Image.asset("assets/images/25231.png",),
+                                  decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Color(0xFFe0f2f1),
+                                      boxShadow:  <BoxShadow>[
+                                        BoxShadow(
+                                          color: Color(0xffAD23DD).withOpacity(0.5),
+                                          //color: Colors.grey.withOpacity(0.1),
+                                          blurRadius: 10,
+                                          offset: Offset(-10, 10),
+                                        ),
+                                      ]
+                                  ),
+                                ),
+
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
                       Positioned(
                         top: _height/1.6,
                         left: _width/3.8,
