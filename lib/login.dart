@@ -245,7 +245,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   Padding(
                                     padding: const EdgeInsets.only(
                                         left: 200,
-                                    right: 10,
+                                        right: 10,
                                     ),
                                     child:
                                     Container(
@@ -458,6 +458,129 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: Image.asset('assets/Group 598 1.png'),
                         ),
                       ),
+
+                      Positioned(
+                        top: _height/1.6,
+                        left: _width/3.8,
+                        //  height: _height,
+                        child: Container(
+                          margin: EdgeInsets.all(1),
+                          height: 40.0,
+                          width: 200,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              begin: Alignment.topRight,
+                              end: Alignment.bottomLeft,
+                              colors: [
+                                Color(0xffA903F8),
+                                Color(0xffF805A5).withOpacity(0.29),
+                              ],
+                            ),
+                            borderRadius: BorderRadius.circular(100),
+                            boxShadow: <BoxShadow>[
+                              BoxShadow(
+                                color: Color(0xffAD23DD).withOpacity(0.5),
+                                //color: Colors.grey.withOpacity(0.1),
+                                blurRadius: 10,
+                                offset: Offset(-10, 10),
+                              ),
+                            ],
+                          ),
+                          child:
+                          ElevatedButton(
+                            onPressed: () {
+                              // Respond to button press
+                            },
+                            child: Text("Log in",style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              foreground: Paint()
+                                ..style = PaintingStyle.stroke
+                                ..strokeWidth = 1
+                                ..color = Color(0xffcd99e8),
+                              //fontFamily: pacifi,
+
+                              shadows: <Shadow>[
+                                Shadow(
+                                 offset: Offset(-10.0, 5.0),
+                                  blurRadius: 33.0,
+                                  color: Color(0xffffffff),
+                                ),
+                                /*Shadow(
+                                            offset: Offset(10.0, 10.0),
+                                            blurRadius: 8.0,
+                                            color: Color.fromARGB(125, 0, 0, 255),
+                                          ),*/
+                              ],
+
+                            ),),
+                            style:
+                            ButtonStyle(
+
+                              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+
+                                  borderRadius: BorderRadius.circular(18.0),
+                                  side: BorderSide(color: Colors.white),
+
+                                ),
+
+                              ),
+                              backgroundColor:
+                              MaterialStateProperty.all<Color>(
+
+                                  Color(
+                                      0xff9104FF),
+
+
+                              ),
+                            ),
+                            // ElevatedButton.styleFrom(
+                            //    primary: Colors.grey,
+                            //   // set the background color
+                            //   // Color onPrimary,
+                            //   // Color onSurface,
+                            //   // Color shadowColor,
+                            //   // double elevation,
+                            //   // TextStyle textStyle,
+                            //   // EdgeInsetsGeometry padding,
+                            //   // Size minimumSize,
+                            //   // BorderSide side,
+                            //   // OutlinedBorder shape,
+                            //   // MouseCursor enabledMouseCursor,
+                            //   // MouseCursor disabledMouseCursor,
+                            //   // VisualDensity visualDensity,
+                            //   // MaterialTapTargetSize tapTargetSize,
+                            //   // Duration animationDuration,
+                            //   // bool enableFeedback
+                            // ),
+
+
+                          ),
+
+
+                          /* RaisedButton(
+                                      elevation: 30,
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(16.0),
+                                          side: BorderSide(color:
+
+                                          Color.fromRGBO(
+                                              78, 78, 78, 1.0))),
+                                      onPressed: () {},
+                                      padding: EdgeInsets.all(10.0),
+                                      color: Color.fromRGBO(
+                                          102, 102, 102, 0.8941176470588236),
+                                      textColor: Colors.white,
+                                      child: Text(
+                                          "forget password",
+                                          //"Shadow Butoon".toUpperCase(),
+                                          style: TextStyle(fontSize: 15)),
+                                    ),
+                                  */
+
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -482,7 +605,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       Color(0xffA903F8),
                       Color(0xffF805A5).withOpacity(0.29),
                     ],
-                  )),
+                  ),
+                  ),
                   //Like the pourcentage exactly
                 ),
               ],
