@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:fire99/Screens/Splash.dart';
+import 'package:fire99/register2.dart';
 import 'package:fire99/screen2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -22,8 +23,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Splash Screen',
       theme: ThemeData(),
-      home: LoginScreen(),
-     // home: SplashScreen(),
+       home: RegisterScreen2(),
+      // home: SplashScreen(),
 
       routes: {LoginScreen.routeName: (context) => LoginScreen()},
       debugShowCheckedModeBanner: false,
