@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Splash Screen',
+      title: 'DEALKarma',
       theme: ThemeData(),
       //   home: HomeScreen(),
        home: SplashScreen(),

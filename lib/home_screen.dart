@@ -1,14 +1,20 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fire99/Helpers/alarm_manager.dart';
 import 'package:fire99/Screens/alarm_screen.dart';
+import 'package:fire99/UIFiles/RewardedVideos.dart';
+import 'package:fire99/UIFiles/SurveyPage.dart';
+import 'package:fire99/UIFiles/Videos.dart';
+import 'package:fire99/UIFiles/Wallet.dart';
 import 'package:fire99/addpost.dart';
 import 'package:fire99/catlog.dart';
 import 'package:fire99/colorr.dart';
 import 'package:fire99/licences.dart';
 import 'package:fire99/log3.dart';
 import 'package:fire99/profile.dart';
+import 'package:fire99/screen.dart';
 import 'package:fire99/screen2.dart';
 import 'package:fire99/survey.dart';
+import 'package:firebase_admob/firebase_admob.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -31,6 +37,45 @@ class _HomeScreenState extends State<HomeScreen> {
     var cardTextStyle =
         TextStyle(fontSize: 14, color: Color.fromRGBO(63, 63, 63, 1));
 
+    var boxDecoration =
+    BoxDecoration(
+      boxShadow: [
+        BoxShadow(
+          color: Color(0xffffffff).withOpacity(0.3),
+          blurRadius: 7,
+          spreadRadius: 1,
+          offset: Offset(0, 4), // Shadow position
+        ),
+      ],
+    );
+
+  var txtStyle=
+    TextStyle(
+    color: Colors.white,
+    fontSize: 25,
+    letterSpacing: 10,
+    shadows: <Shadow>[
+    Shadow(
+    offset: Offset(-10.0, 5.0),
+    blurRadius: 10.0,
+    color: Color(0xff000000)
+        .withOpacity(0.5),
+    ),
+    ],
+    );
+  var btnStyle= ButtonStyle(
+    shape: MaterialStateProperty.all<
+    RoundedRectangleBorder>(
+    RoundedRectangleBorder(
+    //borderRadius: BorderRadius.circular(18.0),
+    side: BorderSide(color: Colors.white),
+    ),
+    ),
+    backgroundColor:
+    MaterialStateProperty.all<Color>(
+    Color(0xff8B669C).withOpacity(1)),
+    );
+
     return
 
       Scaffold(
@@ -47,12 +92,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   child:
               SizedBox()
               ),
-
-
               //Like the pourcentage exactly
             ),
             Container(
-              height: _height * 0.8,
+              //how much banner in bottom
+              height: _height * 0.83,
               child: Stack(
                 // fit: BoxFit.cover,
                 children: [
@@ -80,60 +124,33 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               child: Container(
                                 //Container for box shadow + blur
-                                decoration: BoxDecoration(
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Color(0xffffffff).withOpacity(0.3),
-                                      blurRadius: 7,
-                                      spreadRadius: 1,
-                                      offset: Offset(0, 4), // Shadow position
-                                    ),
-                                  ],
-                                ),
+                                decoration:
+                                boxDecoration,
 
                                 //Material fox box shadow 2
                                 child: ElevatedButton(
-                                  onPressed: () async {
+                                  onPressed:
+
+                                      () async {
                                     final user = FirebaseAuth.instance.currentUser;
                                     final userData = await FirebaseFirestore.instance
                                         .collection('users')
                                         .doc(user.uid)
                                         .get();
                                     String ud = userData['username'];
-
                                     Navigator.push(context,
                                         MaterialPageRoute(builder: (context) {
-                                          return AddPost(ud);
+                                          //return AddPost(ud);
+                                          return Videos();
                                         }));
                                   },
                                   child: Text(
                                     "VIDEOS",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 25,
-                                      letterSpacing: 10,
-                                      shadows: <Shadow>[
-                                        Shadow(
-                                          offset: Offset(-10.0, 5.0),
-                                          blurRadius: 10.0,
-                                          color: Color(0xff000000)
-                                              .withOpacity(0.5),
-                                        ),
-                                      ],
-                                    ),
+                                    style:
+                                    txtStyle,
                                   ),
-                                  style: ButtonStyle(
-                                    shape: MaterialStateProperty.all<
-                                        RoundedRectangleBorder>(
-                                      RoundedRectangleBorder(
-                                        //borderRadius: BorderRadius.circular(18.0),
-                                        side: BorderSide(color: Colors.white),
-                                      ),
-                                    ),
-                                    backgroundColor:
-                                        MaterialStateProperty.all<Color>(
-                                            Color(0xff8B669C).withOpacity(1)),
-                                  ),
+                                  style:
+                                 btnStyle,
                                 ),
                               ),
                             ),
@@ -144,16 +161,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               child: Container(
                                 //Container for box shadow + blur
-                                decoration: BoxDecoration(
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Color(0xffffffff).withOpacity(0.3),
-                                      blurRadius: 7,
-                                      spreadRadius: 1,
-                                      offset: Offset(0, 4), // Shadow position
-                                    ),
-                                  ],
-                                ),
+                                decoration:
+                                boxDecoration,
 
                                 //Material fox box shadow 2
                                 child: ElevatedButton(
@@ -167,7 +176,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
                                     Navigator.push(context,
                                         MaterialPageRoute(builder: (context) {
-                                          return licences(ud);
+                                         // return licences(ud);
+                                          return RewardedVideos();
                                         }));
                                   },
                                   child: Text(
@@ -186,18 +196,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ],
                                     ),
                                   ),
-                                  style: ButtonStyle(
-                                    shape: MaterialStateProperty.all<
-                                        RoundedRectangleBorder>(
-                                      RoundedRectangleBorder(
-                                        //borderRadius: BorderRadius.circular(18.0),
-                                        side: BorderSide(color: Colors.white),
-                                      ),
-                                    ),
-                                    backgroundColor:
-                                        MaterialStateProperty.all<Color>(
-                                            Color(0xff8B669C).withOpacity(1)),
-                                  ),
+                                  style: btnStyle,
                                 ),
                               ),
                             ),
@@ -208,53 +207,25 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               child: Container(
                                 //Container for box shadow + blur
-                                decoration: BoxDecoration(
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Color(0xffffffff).withOpacity(0.3),
-                                      blurRadius: 7,
-                                      spreadRadius: 1,
-                                      offset: Offset(0, 4), // Shadow position
-                                    ),
-                                  ],
-                                ),
+                                decoration:
+                                boxDecoration,
 
                                 //Material fox box shadow 2
                                 child: ElevatedButton(
                                   onPressed: () {
                                     Navigator.push(context,
                                         MaterialPageRoute(builder: (context) {
-                                          return survey();
+                                          //return survey();
+                                          return SurveyPage();
                                         }));
                                   },
                                   child: Text(
                                     "SURVEYS",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 25,
-                                      letterSpacing: 10,
-                                      shadows: <Shadow>[
-                                        Shadow(
-                                          offset: Offset(-10.0, 5.0),
-                                          blurRadius: 10.0,
-                                          color: Color(0xff000000)
-                                              .withOpacity(0.5),
-                                        ),
-                                      ],
-                                    ),
+                                    style:
+
+                                    txtStyle,
                                   ),
-                                  style: ButtonStyle(
-                                    shape: MaterialStateProperty.all<
-                                        RoundedRectangleBorder>(
-                                      RoundedRectangleBorder(
-                                        //borderRadius: BorderRadius.circular(18.0),
-                                        side: BorderSide(color: Colors.white),
-                                      ),
-                                    ),
-                                    backgroundColor:
-                                        MaterialStateProperty.all<Color>(
-                                            Color(0xff8B669C).withOpacity(1)),
-                                  ),
+                                  style: btnStyle,
                                 ),
                               ),
                             ),
@@ -265,16 +236,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               child: Container(
                                 //Container for box shadow + blur
-                                decoration: BoxDecoration(
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Color(0xffffffff).withOpacity(0.3),
-                                      blurRadius: 7,
-                                      spreadRadius: 1,
-                                      offset: Offset(0, 4), // Shadow position
-                                    ),
-                                  ],
-                                ),
+                                decoration:
+                                boxDecoration,
 
                                 //Material fox box shadow 2
                                 child: ElevatedButton(
@@ -293,35 +256,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                   },
                                   child: Text(
                                     "CATALOGUE",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 25,
-                                      letterSpacing: 10,
-                                      shadows: <Shadow>[
-                                        Shadow(
-                                          offset: Offset(-10.0, 5.0),
-                                          blurRadius: 10.0,
-                                          color: Color(0xff000000)
-                                              .withOpacity(0.5),
-                                        ),
-                                      ],
-                                    ),
+                                    style:
+                                    txtStyle,
                                   ),
-                                  style: ButtonStyle(
-                                    shape: MaterialStateProperty.all<
-                                        RoundedRectangleBorder>(
-                                      RoundedRectangleBorder(
-                                        //borderRadius: BorderRadius.circular(18.0),
-                                        side: BorderSide(color: Colors.white),
-                                      ),
-                                    ),
-                                    backgroundColor:
-                                        MaterialStateProperty.all<Color>(
-                                            Color(0xff8B669C).withOpacity(1)),
-                                  ),
+                                  style:
+                                  btnStyle,
                                 ),
                               ),
                             ),
+
                             Padding(
                               padding: const EdgeInsets.only(
                                 left: 10,
@@ -329,50 +272,32 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               child: Container(
                                 //Container for box shadow + blur
-                                decoration: BoxDecoration(
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Color(0xffffffff).withOpacity(0.3),
-                                      blurRadius: 7,
-                                      spreadRadius: 1,
-                                      offset: Offset(0, 4), // Shadow position
-                                    ),
-                                  ],
-                                ),
+                                decoration: boxDecoration,
 
                                 //Material fox box shadow 2
                                 child: ElevatedButton(
-                                  onPressed: () {
-                                    // Respond to button press
+                                  onPressed: () async {
+                                    final user = FirebaseAuth.instance.currentUser;
+                                    final userData = await FirebaseFirestore.instance
+                                        .collection('users')
+                                        .doc(user.uid)
+                                        .get();
+                                    String ud = userData['username'];
+
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                         return Wallet();
+                                          // return screen2(ud);
+                                          // return Screen(ud);
+                                        }));
                                   },
+
+
                                   child: Text(
                                     "WALLET",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 25,
-                                      letterSpacing: 10,
-                                      shadows: <Shadow>[
-                                        Shadow(
-                                          offset: Offset(-10.0, 5.0),
-                                          blurRadius: 10.0,
-                                          color: Color(0xff000000)
-                                              .withOpacity(0.5),
-                                        ),
-                                      ],
-                                    ),
+                                    style: txtStyle,
                                   ),
-                                  style: ButtonStyle(
-                                    shape: MaterialStateProperty.all<
-                                        RoundedRectangleBorder>(
-                                      RoundedRectangleBorder(
-                                        //borderRadius: BorderRadius.circular(18.0),
-                                        side: BorderSide(color: Colors.white),
-                                      ),
-                                    ),
-                                    backgroundColor:
-                                        MaterialStateProperty.all<Color>(
-                                            Color(0xff8B669C).withOpacity(1)),
-                                  ),
+                                  style: btnStyle,
                                 ),
                               ),
                             ),
@@ -383,16 +308,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               child: Container(
                                 //Container for box shadow + blur
-                                decoration: BoxDecoration(
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Color(0xffffffff).withOpacity(0.3),
-                                      blurRadius: 7,
-                                      spreadRadius: 1,
-                                      offset: Offset(0, 4), // Shadow position
-                                    ),
-                                  ],
-                                ),
+                                decoration: boxDecoration,
 
                                 //Material fox box shadow 2
                                 child: ElevatedButton(
@@ -411,32 +327,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                   },
                                   child: Text(
                                     "PROFILE",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 25,
-                                      letterSpacing: 10,
-                                      shadows: <Shadow>[
-                                        Shadow(
-                                          offset: Offset(-10.0, 5.0),
-                                          blurRadius: 10.0,
-                                          color: Color(0xff000000)
-                                              .withOpacity(0.5),
-                                        ),
-                                      ],
-                                    ),
+                                    style: txtStyle,
                                   ),
-                                  style: ButtonStyle(
-                                    shape: MaterialStateProperty.all<
-                                        RoundedRectangleBorder>(
-                                      RoundedRectangleBorder(
-                                        //borderRadius: BorderRadius.circular(18.0),
-                                        side: BorderSide(color: Colors.white),
-                                      ),
-                                    ),
-                                    backgroundColor:
-                                        MaterialStateProperty.all<Color>(
-                                            Color(0xff8B669C).withOpacity(1)),
-                                  ),
+                                  style: btnStyle,
                                 ),
                               ),
                             ),

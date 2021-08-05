@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_native_admob/flutter_native_admob.dart';
 import 'package:flutter_native_admob/native_admob_controller.dart';
 
+import 'home_screen.dart';
+
 
 
 class PostsScreen extends StatefulWidget {
@@ -109,10 +111,6 @@ class _PostsScreenState extends State<PostsScreen> {
         default:
       }
     }
-
-
-
-
   }
 
   @override
@@ -124,222 +122,269 @@ class _PostsScreenState extends State<PostsScreen> {
 
   @override
   Widget build(BuildContext context) {
+
    // final user = FirebaseAuth.instance.currentUser;
    // final userData =FirebaseFirestore.instance.collection('users').doc(user.uid).get();
 
     return Scaffold(
       backgroundColor: Colors.white,
-     appBar: AppBar(
-            backgroundColor: Colors.white,
-            iconTheme: IconThemeData(color: Colors.black),
-            title:Container(
-                decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: [
-                      // Colors.white,
-                      Colors.white,
-                      //Colors.lightBlueAccent,
-                      Colors.white,
-                      // Colors.lightBlueAccent,
-                      //Colors.white,
-                    ])),
-                height:30,
-                child: Center(
-                    child: Row(
-                      children: [
-                        SizedBox(
-                          width:29,
-                        ),
-                        /* Container(
-                 width:80,
-                 child:Image.asset('assets/l1.jfif')
-               ),*/
-                        Text(" D ",style:TextStyle(color:Colors.purple,fontWeight:FontWeight.w300,fontSize:22)),
-                        Text(" K",style:TextStyle(color:Colors.pink,fontWeight:FontWeight.w300,fontSize:22)),
-                        //  Text("  Broker",style:TextStyle(color:Colors.lightBlue,fontWeight:FontWeight.bold,fontSize:21)),
-                      ],
-                    ))
-            ),
-            //backgroundColor: Colors.lightBlueAccent,
-            actions: <Widget>[
-              SizedBox(
-                height:5,
-              ),
-              IconButton(
-                  color:Colors.red,
-                  icon: Icon(Icons.logout,size:32,),
-                  onPressed: () async {
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (context) {
+        floatingActionButtonLocation: FloatingActionButtonLocation.miniEndTop,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+           // print(posts.data().length);
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) {
+                  return HomeScreen();
+                }));
+            // Add your onPressed code here!
+          },
+          child: const Icon(Icons.home),
+          backgroundColor: Colors.greenAccent,
+          splashColor: Colors.white,
+          focusColor: Colors.white,
+          foregroundColor: Colors.white,
+          hoverColor: Colors.white,
+          shape:  RoundedRectangleBorder(
 
-                          return  LoginScreen();
-                        }));
-
-                  })
-
-
-
-            ]
+              borderRadius: BorderRadius.circular(50)),
         ),
-       // drawer: SidebarPage(),
-
       body:
           Container(
             color: Colors.white,
-            child: Column(
-                children: [
-                 Container(
-                      width:200,
-                      height:60,
-                      child:NativeAdmob(
-                        adUnitID:AdsManger.nativeAdunit,
-                        numberAds:3,
-                        controller: _nativeAdController,
-                        type:NativeAdmobType.banner,
-                      )
-                  ),
+            child: Row(
+              children: [
+                /*Expanded(child: Text("hello")),*/
+                Expanded(
+                  child: Column(
+                      children: [
+                        Container(
+                            width:200,
+                           // height:60,
+                            child:NativeAdmob(
+                              adUnitID:AdsManger.nativeAdunit,
+                              numberAds:3,
+                              controller: _nativeAdController,
+                              type:NativeAdmobType.banner,
+                            )
+                        ),
 
-                  SizedBox(
-                    height:7,
-                  ),
-                  Flexible(
-                            //child: Expanded(
-                              child: StreamBuilder(
-   
-                                  stream:
-                                  FirebaseFirestore.instance.collection('posts5')
-                                 //     .where("name",isNotEqualTo:null)
-                                      .snapshots(),
-                                  builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+                        /*SizedBox(
+                          height:7,
+                        ),*/
+                        Flexible(
+                          //child: Expanded(
+                          child: StreamBuilder(
 
-                                    final docs =snapshot.data.docs;
-                                   // int len=docs.length;
+                              stream:
+                              FirebaseFirestore.instance.collection('posts5')
+                              //     .where("name",isNotEqualTo:null)
+                                  .snapshots(),
+                              builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
 
-                                    if (!snapshot.hasData) return Center(child: Text('Loading'));
+                                final docs =snapshot.data.docs;
+                                // int len=docs.length;
 
-                                    if(snapshot.hasData==null) return Center(child: Text('Loading'));
+                                if (!snapshot.hasData) return Center(child: Text('Loading'));
 
-                                    switch (snapshot.connectionState) {
-                                      case ConnectionState.waiting:
-                                        return new Text('Loading...');
+                                if(snapshot.hasData==null) return Center(child: Text('Loading'));
+
+                                switch (snapshot.connectionState) {
+                                  case ConnectionState.waiting:
+                                    return new Text('Loading...');
 //.where("category", isEqualTo:"tec")
-                                      default:
+                                  default:
 
-                                        return ListView.builder(
-                                            itemCount: snapshot.data.documents.length,
-                                            itemBuilder: (context, index) {
-                                              DocumentSnapshot posts = snapshot.data.documents[index];
-                                            // int len=snapshot.data.documents.length;
-                                              if(snapshot.data == null) return CircularProgressIndicator();
-                                             // (profile.imgUrl == null) ? AssetImage('images/user-avatar.png') : NetworkImage(profile.imgUrl)
-                                              return
-                                                 Container(
-                                                  color: Colors.white,
-                                                  child: Column(
-                                                    children: <Widget>[
+                                    return ListView.builder(
+                                        itemCount: snapshot.data.documents.length ~/ 2,
 
-                                                      Container(
-                                                        padding: EdgeInsets.all(10),
-                                                        height: 320,
-                                                      //  color: Color.fromRGBO(41, 30, 83, 1),
-                                                        width: MediaQuery.of(context).size.width / 1.1,
-                                                        child: InkWell(
-                                                          child: Card(
-                                                            child:
-                                                            Container(
-                                                  //backgroundImage: (profile.imgUrl == null) ? AssetImage('images/user-avatar.png') : NetworkImage(profile.imgUrl)
-                                                              child:
-                                                              Image.network(posts.data()['img']??" ",
-                                                                  fit: BoxFit.fill),
-                                                            ),
-                                                          ),
-                                                          onTap: ()  {
+                                        itemBuilder: (context, index) {
+                                          DocumentSnapshot posts = snapshot.data.documents[index ];
+                                          // int len=snapshot.data.documents.length;
+                                          if(snapshot.data == null) return CircularProgressIndicator();
+                                          // (profile.imgUrl == null) ? AssetImage('images/user-avatar.png') : NetworkImage(profile.imgUrl)
+                                          return
+                                            Container(
+                                              color: Colors.white,
+                                              child: Column(
+                                                children: <Widget>[
+                                                  /*So we get Image first and after the txt*/
+
+                                                  Container(
+                                                    padding: EdgeInsets.all(10),
+                                                    height: 320,
+                                                    //  color: Color.fromRGBO(41, 30, 83, 1),
+                                                    width: MediaQuery.of(context).size.width / 1.1,
+                                                    child: InkWell(
+                                                      child: Card(
+                                                        child:
+                                                        Container(
+                                                          //backgroundImage: (profile.imgUrl == null) ? AssetImage('images/user-avatar.png') : NetworkImage(profile.imgUrl)
+                                                          child:
+                                                          Image.network(
 
 
+                                                              posts.data()['img']??" ",
 
-                                                         intersitialAd.show();
-                                                          
-                                                              
-                                                             
-                                                          },
+
+                                                              fit: BoxFit.fill),
                                                         ),
                                                       ),
-                                                      Container(
-                                                        padding: EdgeInsets.all(10),
-                                                        child: ListTile(
-                                                         // leading: Image.network(posts.data()['img']),
-                                                          title: Text(posts.data()['name']??"x",
-                                                  style:TextStyle(color:Colors.black,fontSize:24,fontWeight:FontWeight.w300)),
-                                                          subtitle: Container(
-                                                              height:30,
-                                                              child: Text(
-                                                               // _language.towner() ?? "Owner : "+
-                                                                  posts.data()['user']['name']??"x",style:TextStyle(color:Colors.black,fontSize:15,fontWeight:FontWeight.w300),),),
-                                                         trailing: Text(posts.data()['price'] ??" ",style:TextStyle(color:Colors.green,fontSize:20,fontWeight:FontWeight.w300)),
-                                                        ),
-                                                      ),
+                                                      onTap: ()  {
 
-                                                    ],
+
+
+                                                        intersitialAd.show();
+                                                        print(posts.data().length);
+
+                                                      },
+                                                    ),
+                                                  ),
+                                                  Container(
+                                                    padding: EdgeInsets.all(10),
+                                                    child: ListTile(
+                                                      // leading: Image.network(posts.data()['img']),
+                                                      title:
+                                                      Text(posts.data()['name']??"x",
+                                                          style:TextStyle(color:Colors.black,fontSize:24,fontWeight:FontWeight.w300)),
+                                                      subtitle: Container(
+                                                        height:30,
+                                                        child: Text(
+                                                          // _language.towner() ?? "Owner : "+
+                                                          posts.data()['user']['name']??"x",style:TextStyle(color:Colors.black,fontSize:15,fontWeight:FontWeight.w300),),),
+                                                      trailing: Text(posts.data()['price'] ??" ",style:TextStyle(color:Colors.green,fontSize:20,fontWeight:FontWeight.w300)),
+                                                    ),
                                                   ),
 
-                                              );
-                                            });
-                                    }
-                                  }
-                              ),
-                            ),
-                          //),
+                                                ],
+                                              ),
+
+                                            );
+                                        });
+                                }
+                              }
+                          ),
+                        ),
+
+                      ]),
+                ),
+                Expanded(
+                  child: Column(
+                      children: [
+                       Container(
+                            width:200,
+                           // height:60,
+                            child:NativeAdmob(
+                              adUnitID:AdsManger.nativeAdunit,
+                              numberAds:3,
+                              controller: _nativeAdController,
+                              type:NativeAdmobType.banner,
+                            )
+                        ),
+
+                        // SizedBox(
+                        //   height:7,
+                        // ),
+                        Flexible(
+                                  //child: Expanded(
+                                    child: StreamBuilder(
+
+                                        stream:
+                                        FirebaseFirestore.instance.collection('posts5')
+                                       //     .where("name",isNotEqualTo:null)
+                                            .snapshots(),
+                                        builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+
+                                          final docs =snapshot.data.docs;
+                                         // int len=docs.length;
+
+                                          if (!snapshot.hasData) return Center(child: Text('Loading'));
+
+                                          if(snapshot.hasData==null) return Center(child: Text('Loading'));
+
+                                          switch (snapshot.connectionState) {
+                                            case ConnectionState.waiting:
+                                              return new Text('Loading...');
+                                 //.where("category", isEqualTo:"tec")
+                                            default:
+
+                                              return ListView.builder(
+                                                  itemCount: snapshot.data.documents.length ~/ 2 +1,
+
+                                                  itemBuilder: (context, index) {
+                                                    DocumentSnapshot posts = snapshot.data.documents[index + snapshot.data.documents.length ~/ 2];
+                                                    //DocumentSnapshot posts1 = snapshot.data.documents[5];
+                                                  // int len=snapshot.data.documents.length;
+                                                    if(snapshot.data == null) return CircularProgressIndicator();
+                                                   // (profile.imgUrl == null) ? AssetImage('images/user-avatar.png') : NetworkImage(profile.imgUrl)
+                                                    return
+                                                       Container(
+                                                        color: Colors.white,
+                                                        child: Column(
+                                                          children: <Widget>[
+                                                            /*So we get Image first and after the txt*/
+
+                                                            Container(
+                                                              padding: EdgeInsets.all(10),
+                                                              height: 320,
+                                                            //  color: Color.fromRGBO(41, 30, 83, 1),
+                                                              width: MediaQuery.of(context).size.width / 1.1,
+                                                              child: InkWell(
+                                                                child: Card(
+                                                                  child:
+                                                                  Container(
+                                                        //backgroundImage: (profile.imgUrl == null) ? AssetImage('images/user-avatar.png') : NetworkImage(profile.imgUrl)
+                                                                    child:
+                                                                    Image.network(
 
 
-                /*      AdmobBanner(adUnitId: AdsManger.BannerAdUnitIdEX,
-                       adSize:AdmobBannerSize.SMART_BANNER
-                       ),
-*/
-           /*       Container(
-                    color: Colors.lightGreen,
-                    //padding: const EdgeInsets.only(top:60),
-                    child: CurvedNavigationBar(
-                        color:Colors.white,
-                        backgroundColor: Colors.lightGreenAccent,
-                        //buttonBackgroundColor:Colors.blue,
-                        items:<Widget>[
-
-                          Icon(Icons.home,size:24,color:Colors.black),
-                          //  Icon(Icons.add_box,size:24,color:Colors.blue),
-                      //    Icon(Icons.messenger_rounded,size:24,color:Colors.black),
-                          // Icon(IcoRns.account_circle,size:24,color:Colors.white),
-                        ],
-
-                        animationCurve:Curves.bounceOut,
-                        onTap:(index) async {
-                          final user = FirebaseAuth.instance.currentUser;
-                          final userData = await FirebaseFirestore.instance.collection('users').doc(user.uid).get();
-                          String ud=userData['username'];
+                                                                        posts.data()['img']??" ",
 
 
-                          /* if(index==1)
-                         {
-                           intersitialAd.show();
-                           Navigator.push(
-                               context,
-                               MaterialPageRoute(builder: (context) {
-                             return AddPost();
-                           }));
-                      }*/
-                          if(index==1){
-                            intersitialAd.show();
-                            Navigator.push(context, MaterialPageRoute(builder: (context) =>ChatScreen2(ud)));
-                          }
-                        }
-
-                    ),
-                  )
-
-                ]),
-          ),
-*/
+                                                                        fit: BoxFit.fill),
+                                                                  ),
+                                                                ),
+                                                                onTap: ()  {
 
 
-                  ])) );
+
+                                                               intersitialAd.show();
+                                                               print(
+                                                                 //the lenght
+                                                                  snapshot.data.documents.length
+                                                               );
+
+                                                                },
+                                                              ),
+                                                            ),
+                                                            Container(
+                                                              padding: EdgeInsets.all(10),
+                                                              child: ListTile(
+                                                               // leading: Image.network(posts.data()['img']),
+                                                                title:
+                                                                Text(posts.data()['name']??"x",
+                                                        style:TextStyle(color:Colors.black,fontSize:24,fontWeight:FontWeight.w300)),
+                                                                subtitle: Container(
+                                                                    height:30,
+                                                                    child: Text(
+                                                                     // _language.towner() ?? "Owner : "+
+                                                                        posts.data()['user']['name']??"x",style:TextStyle(color:Colors.black,fontSize:15,fontWeight:FontWeight.w300),),),
+                                                               trailing: Text(posts.data()['price'] ??" ",style:TextStyle(color:Colors.green,fontSize:20,fontWeight:FontWeight.w300)),
+                                                              ),
+                                                            ),
+
+                                                          ],
+                                                        ),
+
+                                                    );
+                                                  });
+                                          }
+                                        }
+                                    ),
+                                  ),
+
+                        ]),
+                ),
+              ],
+            )) );
   }
 }

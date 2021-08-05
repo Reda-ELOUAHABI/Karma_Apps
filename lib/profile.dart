@@ -403,7 +403,7 @@ class _PostsScreenState extends State<Profile> {
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 25,
-                                      letterSpacing: 10,
+                                      letterSpacing: 6,
                                       shadows: <Shadow>[
                                         Shadow(
                                           offset: Offset(-10.0, 5.0),
