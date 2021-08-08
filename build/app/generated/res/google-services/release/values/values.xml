@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">629308302475-9loni4v7iiq1al64l3j2qp2l64v1bim8.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">629308302475</string>
+    <string name="google_api_key" translatable="false">AIzaSyBt8rZO0Aq0r9oOm1EixW_3q416gG7k-c0</string>
+    <string name="google_app_id" translatable="false">1:629308302475:android:06557969f0e7371545608e</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBt8rZO0Aq0r9oOm1EixW_3q416gG7k-c0</string>
+    <string name="google_storage_bucket" translatable="false">dealkarma-lb2021.appspot.com</string>
+    <string name="project_id" translatable="false">dealkarma-lb2021</string>
+</resources>

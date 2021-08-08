@@ -30,6 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void initState() {
     super.initState();
+    const double HH = 1;
     Firebase.initializeApp().whenComplete(() {
       print("completed");
       setState(() {});
@@ -50,10 +51,20 @@ class _LoginScreenState extends State<LoginScreen> {
     super.dispose();
   }
 
+
+
   @override
   Widget build(BuildContext context) {
-    double _width = MediaQuery.of(context).size.width;
-    double _height = MediaQuery.of(context).size.height;
+
+    double _width = MediaQuery
+        .of(context)
+        .size
+        .width;
+    double _height = MediaQuery
+        .of(context)
+        .size
+        .height;
+
     return Scaffold(
         backgroundColor: Colors.white,
         body:
@@ -67,21 +78,21 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: _height / 13,
                   child: Center(
                       child: Text(
-                    "Banner Adds",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                    ),
-                  )),
+                        "Banner Adds",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                        ),
+                      )),
                   decoration: BoxDecoration(
                       gradient: LinearGradient(
-                    begin: Alignment.topRight,
-                    end: Alignment.bottomLeft,
-                    colors: [
-                      Color(0xffA903F8),
-                      Color(0xffF805A5).withOpacity(0.29),
-                    ],
-                  )),
+                        begin: Alignment.topRight,
+                        end: Alignment.bottomLeft,
+                        colors: [
+                          Color(0xffA903F8),
+                          Color(0xffF805A5).withOpacity(0.29),
+                        ],
+                      )),
                   //Like the pourcentage exactly
                 ),
                 Container(
@@ -102,82 +113,18 @@ class _LoginScreenState extends State<LoginScreen> {
                             child: Form(
                               key: _formkey,
                               child: Column(
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                mainAxisAlignment: MainAxisAlignment
+                                    .spaceEvenly,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
 
-                                  SizedBox(height:40 ,),
-
-                                  Padding(
-                                padding: const EdgeInsets.only(
-                                  left: 10,
-                                  right: 10,
-                                  
-                                ),
-                                child: Container(
-                               //Container for box shadow + blur
-                                  decoration: BoxDecoration(
-                                    boxShadow:
-                                    [
-                                      BoxShadow(
-                                        color: Color(0xff2f2e2e),
-                                        blurRadius: 46,
-                                        //spreadRadius: 100,
-                                        offset: Offset(4, 8), // Shadow position
-                                      ),
-                                    ],
-                                  ),
-
-                                  //Material fox box shadow 2
-                                  child: Material(
-                                    elevation: 1.0,
-                                    shadowColor: Colors.purpleAccent,
-                                    color: Colors.transparent,
-                                    child: TextFormField(
-                                      //input txt color
-                                      style: TextStyle(color: Colors.white),
-                                    decoration: InputDecoration(
-
-
-                                    border: OutlineInputBorder(
-                                        borderSide: new BorderSide(color: Colors.teal)
-                                    ),
-                                      labelText: 'User name',
-                                      labelStyle: TextStyle(
-                                        fontSize: 15,
-                                        color: Colors.white,
-                                      ),
-
-                                      enabledBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(5.0),
-                                        borderSide: BorderSide(
-                                          color: Colors.white,
-                                          width: 2.0,
-
-                                        ),
-                                      ),
-                            ),
-
-
-                                      //validation ..
-
-                                      validator: (value) {
-                                        if (value.isEmpty) {
-                                          return 'Please Fill user name Input';
-                                        }
-                                        return null;
-                                      },
-                                      controller: _emailcontroller,
-
-                          ),
-                                  ),
-                                ),
-                              ),
+                                  SizedBox(height: 40,),
 
                                   Padding(
                                     padding: const EdgeInsets.only(
                                       left: 10,
                                       right: 10,
+
                                     ),
                                     child: Container(
                                       //Container for box shadow + blur
@@ -188,7 +135,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                             color: Color(0xff2f2e2e),
                                             blurRadius: 46,
                                             //spreadRadius: 100,
-                                            offset: Offset(4, 8), // Shadow position
+                                            offset: Offset(
+                                                4, 8), // Shadow position
                                           ),
                                         ],
                                       ),
@@ -205,7 +153,76 @@ class _LoginScreenState extends State<LoginScreen> {
 
 
                                             border: OutlineInputBorder(
-                                                borderSide: new BorderSide(color: Colors.teal)
+                                                borderSide: new BorderSide(
+                                                    color: Colors.teal)
+                                            ),
+                                            labelText: 'User name',
+                                            labelStyle: TextStyle(
+                                              fontSize: 15,
+                                              color: Colors.white,
+                                            ),
+
+                                            enabledBorder: OutlineInputBorder(
+                                              borderRadius: BorderRadius
+                                                  .circular(5.0),
+                                              borderSide: BorderSide(
+                                                color: Colors.white,
+                                                width: 2.0,
+
+                                              ),
+                                            ),
+                                          ),
+
+
+                                          //validation ..
+
+                                          validator: (value) {
+                                            if (value.isEmpty) {
+                                              return 'Please Fill user name Input';
+                                            }
+                                            return null;
+                                          },
+                                          controller: _emailcontroller,
+
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                      left: 10,
+                                      right: 10,
+                                    ),
+                                    child: Container(
+                                      //Container for box shadow + blur
+                                      decoration: BoxDecoration(
+                                        boxShadow:
+                                        [
+                                          BoxShadow(
+                                            color: Color(0xff2f2e2e),
+                                            blurRadius: 46,
+                                            //spreadRadius: 100,
+                                            offset: Offset(
+                                                4, 8), // Shadow position
+                                          ),
+                                        ],
+                                      ),
+
+                                      //Material fox box shadow 2
+                                      child: Material(
+                                        elevation: 1.0,
+                                        shadowColor: Colors.purpleAccent,
+                                        color: Colors.transparent,
+                                        child: TextFormField(
+                                          //input txt color
+                                          style: TextStyle(color: Colors.white),
+                                          decoration: InputDecoration(
+
+
+                                            border: OutlineInputBorder(
+                                                borderSide: new BorderSide(
+                                                    color: Colors.teal)
                                             ),
                                             labelText: 'Password',
                                             labelStyle: TextStyle(
@@ -214,7 +231,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                             ),
 
                                             enabledBorder: OutlineInputBorder(
-                                              borderRadius: BorderRadius.circular(5.0),
+                                              borderRadius: BorderRadius
+                                                  .circular(5.0),
                                               borderSide: BorderSide(
                                                 color: Colors.white,
                                                 width: 2.0,
@@ -242,12 +260,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                   ),
 
 
-
                                   //Forget Password btn
                                   Padding(
                                     padding: const EdgeInsets.only(
-                                        left: 200,
-                                        right: 10,
+                                      left: 200,
+                                      right: 10,
                                     ),
                                     child:
                                     Container(
@@ -255,10 +272,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                       height: 30.0,
                                       width: 200,
                                       decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(100),
+                                        borderRadius: BorderRadius.circular(
+                                            100),
                                         boxShadow: <BoxShadow>[
                                           BoxShadow(
-                                            color: Color(0xff383838).withOpacity(0.5),
+                                            color: Color(0xff383838)
+                                                .withOpacity(0.5),
                                             //color: Colors.grey.withOpacity(0.1),
                                             blurRadius: 10,
                                             offset: Offset(-10, 10),
@@ -270,8 +289,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                         onPressed: () {
                                           // Respond to button press
                                         },
-                                        child: Text("forgot password",style: TextStyle(
-
+                                        child: Text(
+                                          "forgot password", style: TextStyle(
+                                          fontSize: 11,
                                           shadows: <Shadow>[
                                             Shadow(
                                               offset: Offset(-10.0, 5.0),
@@ -289,18 +309,22 @@ class _LoginScreenState extends State<LoginScreen> {
                                         style:
                                         ButtonStyle(
 
-                                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                                RoundedRectangleBorder(
+                                          shape: MaterialStateProperty.all<
+                                              RoundedRectangleBorder>(
+                                            RoundedRectangleBorder(
 
-                                                    borderRadius: BorderRadius.circular(18.0),
-                                                    side: BorderSide(color: Colors.grey),
-
-                                                ),
+                                              borderRadius: BorderRadius
+                                                  .circular(18.0),
+                                              side: BorderSide(
+                                                  color: Colors.grey),
 
                                             ),
+
+                                          ),
                                           backgroundColor:
-                                          MaterialStateProperty.all<Color>(Color(
-                                              0xff8B669C)),
+                                          MaterialStateProperty.all<Color>(
+                                              Color(
+                                                  0xff8B669C)),
                                         ),
                                       ),
                                     ),
@@ -310,14 +334,17 @@ class _LoginScreenState extends State<LoginScreen> {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                              builder: (context) => RegisterScreen2()));
+                                              builder: (context) =>
+                                                  RegisterScreen2()));
                                     },
                                     child: Container(
-                                      margin: EdgeInsets.symmetric(vertical: 10),
+                                      margin: EdgeInsets.symmetric(
+                                          vertical: 10),
                                       //padding: EdgeInsets.only(left:15,bottom:15,right:15),
                                       //alignment: Alignment.bottomCenter,
                                       child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        mainAxisAlignment: MainAxisAlignment
+                                            .center,
                                         children: <Widget>[
                                           Text(
                                             "I don't have an account ?",
@@ -333,7 +360,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                           Text(
                                             "Sign up",
                                             style: TextStyle(
-                                                color: kPrimaryColor,
+                                                color: Colors.white30,
                                                 fontSize: 18,
                                                 fontWeight: FontWeight.w900,
                                                 fontStyle: FontStyle.italic),
@@ -345,16 +372,18 @@ class _LoginScreenState extends State<LoginScreen> {
 
                                     ),
                                   ),
- ],
+
+                                ],
                               ),
                             ),
 
-                            decoration: BoxDecoration(
+                            decoration:
+                            BoxDecoration(
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(16)),
+                                BorderRadius.all(Radius.circular(16)),
                                 border: Border.all(
-                                        width: 2.0,
-                                        color: const Color(0xFFFFFFFF)),
+                                    width: 5.0,
+                                    color: const Color(0xFFFFFFFF)),
 
                                 boxShadow: [
                                   BoxShadow(
@@ -385,84 +414,43 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
 
-
+//Auth2 three elements
                       Positioned(
+                        width: _width,
+                        top: _height/2,
+                        child: Container(
+                          /*  margin: EdgeInsets.only(
 
-                        child:
-                        Padding(
-                          padding: const EdgeInsets.only( top: 430),
-                          child: Container(
-                            /*  margin: EdgeInsets.only(
+                                      ),*/
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
 
-                                        ),*/
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-
-                                GestureDetector(
-                                  onTap:  () async {
-                                    const url = 'https://facebook.com';
-                                    if (await canLaunch(url)) {
-                                      await launch(url);
-                                    } else {
-                                      throw 'Could not launch $url';
-                                    }
-                                  },
-                                  child: Container(
-                                    // margin: EdgeInsets.only(
-                                    //
-                                    // ),
-                                    width: 60,
-                                    height: 60,
-                                    child: Image.asset("assets/images/facebook.png"),
-                                    decoration: BoxDecoration(
-
-                                        shape: BoxShape.circle,
-                                        color: Color(0xFFe0f2f1),
-                                    boxShadow:  <BoxShadow>[
-                                    BoxShadow(
-                                    color: Color(0xffAD23DD).withOpacity(0.5),
-                              //color: Colors.grey.withOpacity(0.1),
-                              blurRadius: 10,
-                              offset: Offset(-10, 10),
-                            ),
-                                   ]
-                                    ),
-                                  ),
-                                ),
-                                GestureDetector(
-                                  onTap: () async {
-                                    await sginInWithGoogle();
-                                  },
-                                  child: Container(
-                                    width: 60,
-                                    height: 60,
-                                    child: Image.asset("assets/images/gmail-02 (1) 1.png",width: _width/1000,),
-
-                                    decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: Color(0xFFe0f2f1),
-                                        boxShadow:  <BoxShadow>[
-                                    BoxShadow(
-                                    color: Color(0xffAD23DD).withOpacity(0.5),
-                                    //color: Colors.grey.withOpacity(0.1),
-                                    blurRadius: 10,
-                                    offset: Offset(-10, 10),
-                                  ),
-                              ]
-                                    ),
-                                  ),
-                                ),
-                                Container(
+                              GestureDetector(
+                                onTap: () async {
+                                  const url = 'https://facebook.com';
+                                  if (await canLaunch(url)) {
+                                    await launch(url);
+                                  } else {
+                                    throw 'Could not launch $url';
+                                  }
+                                },
+                                child: Container(
+                                  // margin: EdgeInsets.only(
+                                  //
+                                  // ),
                                   width: 60,
                                   height: 60,
-                                  child: Image.asset("assets/images/25231.png",),
+                                  child: Image.asset(
+                                      "assets/images/facebook.png"),
                                   decoration: BoxDecoration(
+
                                       shape: BoxShape.circle,
                                       color: Color(0xFFe0f2f1),
-                                      boxShadow:  <BoxShadow>[
+                                      boxShadow: <BoxShadow>[
                                         BoxShadow(
-                                          color: Color(0xffAD23DD).withOpacity(0.5),
+                                          color: Color(0xffAD23DD).withOpacity(
+                                              0.5),
                                           //color: Colors.grey.withOpacity(0.1),
                                           blurRadius: 10,
                                           offset: Offset(-10, 10),
@@ -470,15 +458,61 @@ class _LoginScreenState extends State<LoginScreen> {
                                       ]
                                   ),
                                 ),
+                              ),
+                              GestureDetector(
+                                onTap: () async {
+                                  await sginInWithGoogle();
+                                },
+                                child: Container(
+                                  width: 60,
+                                  height: 60,
+                                  child: Image.asset(
+                                    "assets/images/gmail-02 (1) 1.png",
+                                    width: _width / 1000,),
 
-                              ],
-                            ),
+                                  decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Color(0xFFe0f2f1),
+                                      boxShadow: <BoxShadow>[
+                                        BoxShadow(
+                                          color: Color(0xffAD23DD).withOpacity(
+                                              0.5),
+                                          //color: Colors.grey.withOpacity(0.1),
+                                          blurRadius: 10,
+                                          offset: Offset(-10, 10),
+                                        ),
+                                      ]
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                width: 60,
+                                height: 60,
+                                child: Image.asset("assets/images/25231.png",),
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Color(0xFFe0f2f1),
+                                    boxShadow: <BoxShadow>[
+                                      BoxShadow(
+                                        color: Color(0xffAD23DD).withOpacity(
+                                            0.5),
+                                        //color: Colors.grey.withOpacity(0.1),
+                                        blurRadius: 10,
+                                        offset: Offset(-10, 10),
+                                      ),
+                                    ]
+                                ),
+                              ),
+
+                            ],
                           ),
                         ),
                       ),
+
+
                       Positioned(
-                        top: _height/1.6,
-                        left: _width/3.8,
+                        top: _height / 1.5,
+                        left: _width / 3.8,
                         //  height: _height,
                         child: Container(
                           margin: EdgeInsets.all(1),
@@ -506,7 +540,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           child:
                           ElevatedButton(
 
-                            child: Text("Log in",style: TextStyle(
+                            child: Text("Log in", style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                               foreground: Paint()
@@ -517,7 +551,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                               shadows: <Shadow>[
                                 Shadow(
-                                 offset: Offset(-10.0, 5.0),
+                                  offset: Offset(-10.0, 5.0),
                                   blurRadius: 33.0,
                                   color: Color(0xffffffff),
                                 ),
@@ -528,7 +562,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             style:
                             ButtonStyle(
 
-                              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                              shape: MaterialStateProperty.all<
+                                  RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
 
                                   borderRadius: BorderRadius.circular(18.0),
@@ -540,8 +575,8 @@ class _LoginScreenState extends State<LoginScreen> {
                               backgroundColor:
                               MaterialStateProperty.all<Color>(
 
-                                  Color(
-                                      0xff9104FF),
+                                Color(
+                                    0xff9104FF),
 
 
                               ),
@@ -560,7 +595,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
                                 showDialog(
                                     context: context,
-                                    builder: (_) => new AlertDialog(
+                                    builder: (_) =>
+                                    new AlertDialog(
                                       title: new Text(" OPEN YOUR EMAIL "),
                                       content: new Text(
                                           "We sent a message to your check it to verify your account"),
@@ -583,7 +619,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                 if (isRememberMe) {
                                   await setRememberMe(isRememberMe);
                                   await setEmail(_emailcontroller.text.trim());
-                                  await setPassword(_passwordcontroller.text.trim());
+                                  await setPassword(
+                                      _passwordcontroller.text.trim());
                                 } else {
                                   await setRememberMe(isRememberMe);
                                   await setEmail('');
@@ -601,7 +638,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                     password: _passwordcontroller.text);
 
                                 final user = FirebaseAuth.instance.currentUser;
-                                final userData = await FirebaseFirestore.instance
+                                final userData = await FirebaseFirestore
+                                    .instance
                                     .collection('users')
                                     .doc(user.uid)
                                     .get();
@@ -625,9 +663,9 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
 
 
-
                         ),
                       ),
+
                     ],
                   ),
                 ),
@@ -638,21 +676,21 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: _height / 13,
                   child: Center(
                       child: Text(
-                    "Banner Adds",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                    ),
-                  )),
+                        "Banner Adds",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                        ),
+                      )),
                   decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                    begin: Alignment.topRight,
-                    end: Alignment.bottomLeft,
-                    colors: [
-                      Color(0xffA903F8),
-                      Color(0xffF805A5).withOpacity(0.29),
-                    ],
-                  ),
+                    gradient: LinearGradient(
+                      begin: Alignment.topRight,
+                      end: Alignment.bottomLeft,
+                      colors: [
+                        Color(0xffA903F8),
+                        Color(0xffF805A5).withOpacity(0.29),
+                      ],
+                    ),
                   ),
 
                 ),
@@ -662,12 +700,14 @@ class _LoginScreenState extends State<LoginScreen> {
         ));
   }
 
+
   Future<void> sginInWithGoogle() async /* Sgin in with google method*/
   {
     GoogleSignInAccount googleSignInAccount = await _googleSignIn.signIn();
   }
-}
 
+
+}
 
 
 

@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\Users\\Reda El Ouahabi\\Desktop\\Faissal_Drio\\karma_apps\\build\\flutter_native_admob\\intermediates\\res\\merged\\release\\color\\common_google_signin_btn_text_light.xml",
+        "source": "C:\\Users\\Reda El Ouahabi\\.gradle\\caches\\transforms-2\\files-2.1\\27a51f2d6fb4c91d7925584bc266b0ae\\play-services-base-17.0.0\\res\\color\\common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\Reda El Ouahabi\\Desktop\\Faissal_Drio\\karma_apps\\build\\flutter_native_admob\\intermediates\\res\\merged\\release\\color\\common_google_signin_btn_text_dark.xml",
+        "source": "C:\\Users\\Reda El Ouahabi\\.gradle\\caches\\transforms-2\\files-2.1\\27a51f2d6fb4c91d7925584bc266b0ae\\play-services-base-17.0.0\\res\\color\\common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\Reda El Ouahabi\\Desktop\\Faissal_Drio\\karma_apps\\build\\flutter_native_admob\\intermediates\\res\\merged\\release\\color\\common_google_signin_btn_tint.xml",
+        "source": "C:\\Users\\Reda El Ouahabi\\.gradle\\caches\\transforms-2\\files-2.1\\27a51f2d6fb4c91d7925584bc266b0ae\\play-services-base-17.0.0\\res\\color\\common_google_signin_btn_tint.xml"
+    }
+]

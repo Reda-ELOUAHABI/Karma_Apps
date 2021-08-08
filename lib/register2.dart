@@ -20,6 +20,8 @@ class _RegisterScreen2State extends State<RegisterScreen2> {
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   String valuechoose;
    bool x=false;
+
+
   void initState()
   {
     super.initState();
@@ -58,7 +60,9 @@ class _RegisterScreen2State extends State<RegisterScreen2> {
     double _height = MediaQuery.of(context).size.height;
 
 
-    return Scaffold(
+    return 
+    
+    Scaffold(
       appBar: AppBar(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(bottom: Radius.circular(50))),
       /*  // title: Container(
@@ -401,7 +405,7 @@ backgroundColor: Colors.white,
                               borderRadius:
                               BorderRadius.all(Radius.circular(16)),
                               border: Border.all(
-                                  width: 2.0,
+                                  width: 5.0,
                                   color: const Color(0xFFFFFFFF)),
 
                               boxShadow: [
@@ -435,75 +439,56 @@ backgroundColor: Colors.white,
 
 
                     Positioned(
+                      width: _width,
+                      top: _height/2,
+                      child: Container(
+                        /*  margin: EdgeInsets.only(
 
-                      child: Padding(
-                        padding: const EdgeInsets.only( top: 430),
-                        child: Container(
-                          /*  margin: EdgeInsets.only(
+                                      ),*/
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
 
-                                        ),*/
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-
-                              GestureDetector(
-                                onTap:  () async {
-                                  const url = 'https://facebook.com';
-                                  if (await canLaunch(url)) {
-                                    await launch(url);
-                                  } else {
-                                    throw 'Could not launch $url';
-                                  }
-                                },
-                                child: Container(
-                                  // margin: EdgeInsets.only(
-                                  //
-                                  // ),
-                                  width: 60,
-                                  height: 60,
-                                  child: Image.asset("assets/images/facebook.png"),
-                                  decoration: BoxDecoration(
-
-                                      shape: BoxShape.circle,
-                                      color: Color(0xFFe0f2f1),
-                                      boxShadow:  <BoxShadow>[
-                                        BoxShadow(
-                                          color: Color(0xffAD23DD).withOpacity(0.5),
-                                          //color: Colors.grey.withOpacity(0.1),
-                                          blurRadius: 10,
-                                          offset: Offset(-10, 10),
-                                        ),
-                                      ]
-                                  ),
-                                ),
-                              ),
-                              GestureDetector(
-                                onTap: () async {
-                                  await sginInWithGoogle();
-                                },
-                                child: Container(
-                                  width: 60,
-                                  height: 60,
-                                  child: Image.asset("assets/images/gmail-02 (1) 1.png",width: _width/1000,),
-
-                                  decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      color: Color(0xFFe0f2f1),
-                                      boxShadow:  <BoxShadow>[
-                                        BoxShadow(
-                                          color: Color(0xffAD23DD).withOpacity(0.5),
-                                          //color: Colors.grey.withOpacity(0.1),
-                                          blurRadius: 10,
-                                          offset: Offset(-10, 10),
-                                        ),
-                                      ]
-                                  ),
-                                ),
-                              ),
-                              Container(
+                            GestureDetector(
+                              onTap:  () async {
+                                const url = 'https://facebook.com';
+                                if (await canLaunch(url)) {
+                                  await launch(url);
+                                } else {
+                                  throw 'Could not launch $url';
+                                }
+                              },
+                              child: Container(
+                                // margin: EdgeInsets.only(
+                                //
+                                // ),
                                 width: 60,
                                 height: 60,
-                                child: Image.asset("assets/images/25231.png",),
+                                child: Image.asset("assets/images/facebook.png"),
+                                decoration: BoxDecoration(
+
+                                    shape: BoxShape.circle,
+                                    color: Color(0xFFe0f2f1),
+                                    boxShadow:  <BoxShadow>[
+                                      BoxShadow(
+                                        color: Color(0xffAD23DD).withOpacity(0.5),
+                                        //color: Colors.grey.withOpacity(0.1),
+                                        blurRadius: 10,
+                                        offset: Offset(-10, 10),
+                                      ),
+                                    ]
+                                ),
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () async {
+                                await sginInWithGoogle();
+                              },
+                              child: Container(
+                                width: 60,
+                                height: 60,
+                                child: Image.asset("assets/images/gmail-02 (1) 1.png",width: _width/1000,),
+
                                 decoration: BoxDecoration(
                                     shape: BoxShape.circle,
                                     color: Color(0xFFe0f2f1),
@@ -517,14 +502,31 @@ backgroundColor: Colors.white,
                                     ]
                                 ),
                               ),
+                            ),
+                            Container(
+                              width: 60,
+                              height: 60,
+                              child: Image.asset("assets/images/25231.png",),
+                              decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Color(0xFFe0f2f1),
+                                  boxShadow:  <BoxShadow>[
+                                    BoxShadow(
+                                      color: Color(0xffAD23DD).withOpacity(0.5),
+                                      //color: Colors.grey.withOpacity(0.1),
+                                      blurRadius: 10,
+                                      offset: Offset(-10, 10),
+                                    ),
+                                  ]
+                              ),
+                            ),
 
-                            ],
-                          ),
+                          ],
                         ),
                       ),
                     ),
                     Positioned(
-                      top: _height/1.6,
+                      top: _height/1.5,
                       left: _width/3.8,
                       //  height: _height,
                       child: Container(
@@ -553,7 +555,7 @@ backgroundColor: Colors.white,
                         child:
                         ElevatedButton(
 
-                          child: Text("Sign in",style: TextStyle(
+                          child: Text("Sign up",style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                             foreground: Paint()
