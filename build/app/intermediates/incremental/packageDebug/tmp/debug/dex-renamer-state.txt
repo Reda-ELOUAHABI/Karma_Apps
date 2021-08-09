@@ -1,4 +1,4 @@
-#Mon Aug 09 12:30:11 WEST 2021
+#Mon Aug 09 12:57:09 WEST 2021
 base.2=C\:\\Users\\Reda El Ouahabi\\Desktop\\Faissal_Drio\\karma_apps\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes2.dex
 base.1=C\:\\Users\\Reda El Ouahabi\\Desktop\\Faissal_Drio\\karma_apps\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
 base.0=C\:\\Users\\Reda El Ouahabi\\Desktop\\Faissal_Drio\\karma_apps\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
