@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fire99/Helpers/alarm_manager.dart';
+import 'package:fire99/OldProfile.dart';
 import 'package:fire99/Screens/alarm_screen.dart';
 import 'package:fire99/UIFiles/RewardedVideos.dart';
 import 'package:fire99/UIFiles/SurveyPage.dart';
@@ -184,8 +185,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                     "REWARDED VIDEOS ",
                                     style: TextStyle(
                                       color: Colors.white,
-                                      fontSize: 20,
-                                      letterSpacing: 7,
+                                      fontSize: 17,
+                                      letterSpacing: 6,
                                       shadows: <Shadow>[
                                         Shadow(
                                           offset: Offset(-10.0, 5.0),
@@ -333,6 +334,50 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                               ),
                             ),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                left: 10,
+                                right: 10,
+                              ),
+                              child: Container(
+                                //Container for box shadow + blur
+                                decoration: boxDecoration,
+
+                                //Material fox box shadow 2
+                                child: ElevatedButton(
+                                  onPressed: () async {
+                                    final user = FirebaseAuth.instance.currentUser;
+                                    final userData = await FirebaseFirestore.instance
+                                        .collection('users')
+                                        .doc(user.uid)
+                                        .get();
+                                    String ud = userData['username'];
+
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                          return OldProfile(ud);
+                                        }));
+                                  },
+                                  child: Text(
+                                    "ADD TO CATALOG",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 17,
+                                      letterSpacing: 6,
+                                      shadows: <Shadow>[
+                                        Shadow(
+                                          offset: Offset(-10.0, 5.0),
+                                          blurRadius: 10.0,
+                                          color: Color(0xff000000)
+                                              .withOpacity(0.5),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  style: btnStyle,
+                                ),
+                              ),
+                            ),
                           ],
                         ),
                         //The box itself
@@ -378,7 +423,7 @@ class _HomeScreenState extends State<HomeScreen> {
               height: _height / 13,
               child: Center(
                   child: Text(
-                "Banner Adds",
+                "Banner Ads",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,

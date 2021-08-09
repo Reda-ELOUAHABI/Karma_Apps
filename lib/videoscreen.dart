@@ -46,7 +46,7 @@ class videoScreenState extends State<videoScreen> {
           title: Center(child: Text("",style:TextStyle(color:Colors.white,fontSize:24,fontStyle:FontStyle.italic))),
 
           actions: <Widget>[
-            IconButton(
+            IconButton(  
               color:Colors.white,
               icon: Icon(Icons.auto_awesome_mosaic),
 

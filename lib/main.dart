@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:fire99/Screens/Splash.dart';
+import 'package:fire99/UIFiles/Wallet.dart';
 import 'package:fire99/profile.dart';
 import 'package:fire99/register2.dart';
 import 'package:fire99/screen2.dart';
@@ -13,9 +14,17 @@ import 'Helpers/remember_me.dart';
 import 'colorr.dart';
 import 'home_screen.dart';
 import 'login.dart';
+//No rotation
+import 'package:flutter/services.dart';
 
+void main() {
+  //No rotation
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
 
-void main() => runApp(MyApp());
+  runApp(MyApp());
+}
 
 
 class MyApp extends StatelessWidget {
@@ -25,8 +34,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'DEALKarma',
       theme: ThemeData(),
-      //   home: HomeScreen(),
-       home: SplashScreen(),
+      //  home: Wallet(),
+        home: SplashScreen(),
 
       routes: {LoginScreen.routeName: (context) => LoginScreen()},
       debugShowCheckedModeBanner: false,

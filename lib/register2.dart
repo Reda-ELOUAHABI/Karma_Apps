@@ -669,7 +669,7 @@ backgroundColor: Colors.white,
                 height: _height / 13,
                 child: Center(
                     child: Text(
-                      "Banner Adds",
+                      "Banner Ads",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 20,

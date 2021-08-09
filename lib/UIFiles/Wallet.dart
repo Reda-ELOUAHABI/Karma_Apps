@@ -61,7 +61,7 @@ class _WalletState extends State<Wallet> {
                         end: Alignment.bottomCenter,
                         colors: [
                           Color(0xffFD067D).withOpacity(0.9),
-                          Color(0xff4200FF).withOpacity(0.65),
+                          Color(0xff5f29fd).withOpacity(0.65),
                         ],
                       )),
                   //color: Colors.deepOrange,
@@ -71,8 +71,42 @@ class _WalletState extends State<Wallet> {
                   child:Center(child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("336 Kt = \$1,200,000.00"),
-                      Text("Balance"),
+                      Text("336 Kt = \$1,200,000.00",style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        foreground: Paint()
+                          ..style = PaintingStyle.stroke
+                          ..strokeWidth = 1
+                          ..color = Color(0xffcd99e8),
+                        //fontFamily: pacifi,
+
+                        shadows: <Shadow>[
+                          Shadow(
+                            offset: Offset(-10.0, 5.0),
+                            blurRadius: 33.0,
+                            color: Color(0xffffffff),
+                          ),
+
+                        ],
+                      ),),
+                      Text("Balance" , style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        foreground: Paint()
+                          ..style = PaintingStyle.stroke
+                          ..strokeWidth = 1
+                          ..color = Color(0xffdddade),
+                        //fontFamily: pacifi,
+
+                        shadows: <Shadow>[
+                          Shadow(
+                            offset: Offset(-10.0, 5.0),
+                            blurRadius: 33.0,
+                            color: Color(0xffffffff),
+                          ),
+
+                        ],
+                      ),),
                     ],
                   )),
                 ),
@@ -92,14 +126,15 @@ class _WalletState extends State<Wallet> {
                         child: CustomPaint(
                           child:  Container(
                         margin: EdgeInsets.only(
-                        top: 50,
+                        top: _height/26,
                         ),
                           child: Column(
                             children: [
                               Row(
+                             //   crossAxisAlignment: CrossAxisAlignment.stretch,
                                 children: [
-                                  Image.asset("assets/images/-.png"),
-                                  Image.asset("assets/images/dollar-sign.png",width: 10,),
+                                  Image.asset("assets/images/-.png",width: _width/10,),
+                                  Image.asset("assets/images/dollar-sign.png",width: _width/10,),
                                 ],
                               ),
                               Image.asset("assets/images/Cash In.png"),
@@ -120,18 +155,18 @@ class _WalletState extends State<Wallet> {
                         child: CustomPaint(
                           child: Container(
                               margin: EdgeInsets.only(
-                                top: 50,
+                                top: _height/26,
                               ),
                               child: Column(
                                 children: [
                                   Row(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      Image.asset("assets/images/+.png",width: 30,),
-                                      Image.asset("assets/images/dollar-sign.png",width: 10,),
+                                      Image.asset("assets/images/+.png",width: _width/10,),
+                                      Image.asset("assets/images/dollar-sign.png",width: _width/10,),
                                     ],
                                   ),
-                                  Image.asset("assets/images/Add cas ---h.png",width: 30,),
+                                  Image.asset("assets/images/Add cas ---h.png",),
                                 ],
                               )),
                           painter: ShapeCustom(),
@@ -149,12 +184,12 @@ class _WalletState extends State<Wallet> {
                         child: CustomPaint(
                           child: Container(
                               margin: EdgeInsets.only(
-                                top: 50,
+                                top: _height/26,
                               ),
                               child: Column(
                                 children: [
-                                  Image.asset("assets/images/Card_Icon.png",width: 30,),
-                                  Image.asset("assets/images/cards.png",width: 70,),
+                                  Image.asset("assets/images/Card_Icon.png",width: _width/7,),
+                                  Image.asset("assets/images/cards.png",width: _width/5,),
                                 ],
                               )),
                           painter: ShapeCustom(),
@@ -195,14 +230,20 @@ class _WalletState extends State<Wallet> {
                 fts: 20,
               ),
               Container(
-                color: Color((math.Random().nextDouble() * 0xFFFFFF).toInt())
-                    .withOpacity(1.0),
-                height: _height / 6,
+                /*color: Color((math.Random().nextDouble() * 0xFFFFFF).toInt())
+                    .withOpacity(1.0),*/
+
+                child: Image.asset("assets/images/Group 626.png",
+               // height: _height/11,
+                  width: _width,
+                ),
               ),
               Container(
-                color: Color((math.Random().nextDouble() * 0xFFFFFF).toInt())
-                    .withOpacity(1.0),
-                height: _height / 6,
+           /*     color: Color((math.Random().nextDouble() * 0xFFFFFF).toInt())
+                    .withOpacity(1.0),*/
+                child: Image.asset("assets/images/Group 625.png",
+                  width: _width,
+                ),
               ),
               BannerAdds(
                 fts: 20,

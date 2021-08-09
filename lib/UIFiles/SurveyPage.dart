@@ -22,7 +22,7 @@ class _SurveyPageState extends State<SurveyPage> {
             height: _height / 13,
             child: Center(
                 child: Text(
-                  "Banner Adds",
+                  "Banner Ads",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 20,
@@ -45,7 +45,7 @@ class _SurveyPageState extends State<SurveyPage> {
             height: _height / 13,
             child: Center(
                 child: Text(
-                  "Banner Adds",
+                  "Banner Ads",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 20,
