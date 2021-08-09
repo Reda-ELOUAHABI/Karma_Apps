@@ -101,7 +101,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     // fit: BoxFit.cover,
                     children: [
                       Positioned(
-                          height: _height / 2.3,
+                          height: _height / 2,
                           width: _width / 1.1,
                           left: _width / 20,
                           top: _height / 10,
@@ -118,7 +118,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
 
-                                  SizedBox(height: 40,),
+                                  SizedBox(height: 50,),
 
                                   Padding(
                                     padding: const EdgeInsets.only(
@@ -372,9 +372,10 @@ class _LoginScreenState extends State<LoginScreen> {
 
                                     ),
                                   ),
-
+                                  SizedBox(height: 10,),
                                 ],
                               ),
+
                             ),
 
                             decoration:
@@ -407,8 +408,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         top: 10,
                         //  height: _height,
                         child: Container(
-                          width: 400,
-                          height: 150,
+                          width: _height/2.3,
+                          height: _width/3,
                           color: Colors.lightBlueAccent[300],
                           child: Image.asset('assets/Group 598 1.png'),
                         ),
@@ -417,7 +418,7 @@ class _LoginScreenState extends State<LoginScreen> {
 //Auth2 three elements
                       Positioned(
                         width: _width,
-                        top: _height/2,
+                        top: _height/1.8,
                         child: Container(
                           /*  margin: EdgeInsets.only(
 

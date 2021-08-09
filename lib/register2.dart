@@ -101,7 +101,7 @@ backgroundColor: Colors.white,
                   // fit: BoxFit.cover,
                   children: [
                     Positioned(
-                        height: _height / 2.3,
+                        height: _height / 2,
                         width: _width / 1.1,
                         left: _width / 20,
                         top: _height / 10,
@@ -117,7 +117,7 @@ backgroundColor: Colors.white,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
 
-                                SizedBox(height:40 ,),
+                                SizedBox(height:50 ,),
 //User name
                                 Padding(
                                   padding: const EdgeInsets.only(
@@ -396,6 +396,7 @@ backgroundColor: Colors.white,
 
 
                                 //Forget Password btn
+                                SizedBox(height:40 ,),
 
                               ],
                             ),
@@ -430,8 +431,8 @@ backgroundColor: Colors.white,
                       top: 10,
                       //  height: _height,
                       child: Container(
-                        width: 400,
-                        height: 150,
+                        width: _height/2.3,
+                        height: _width/3,
                         color: Colors.lightBlueAccent[300],
                         child: Image.asset('assets/Group 598 1.png'),
                       ),
@@ -440,7 +441,7 @@ backgroundColor: Colors.white,
 
                     Positioned(
                       width: _width,
-                      top: _height/2,
+                      top: _height/1.8,
                       child: Container(
                         /*  margin: EdgeInsets.only(
 
@@ -597,34 +598,7 @@ backgroundColor: Colors.white,
                           ),
 
                           onPressed: () async{
-                            /* UserCredential userCredential = await FirebaseAuth.instance.signInAnonymously();
-                          if(userCredential.user.emailVerified==false){
-                            User user=FirebaseAuth.instance.currentUser;
-                            await user.sendEmailVerification();
-
-                          }*/
-//Since we don't have this accept terms button
-                           /* if(x==false){
-                              showDialog(
-                                  context: context,
-                                  builder: (_) => new AlertDialog(
-                                    title: new Text(" Wrong "),
-                                    content: new Text("you must accept terms and conditions "),
-                                    actions: <Widget>[
-                                      FlatButton(
-                                        child: Text('Close me!'),
-                                        onPressed: () {
-                                          Navigator.of(context).pop();
-                                        },
-                                      )
-                                    ],
-                                  ));
-                              Flushbar(
-                                  backgroundColor:Colors.black,
-                                  icon:Icon(Icons.android,color:Colors.green),
-                                  messageText:Text("You Must Accept Terms and Conditions",style:TextStyle(color:Colors.red))
-                              );
-                            }*/
+                          //Since we don't have this accept terms button
                             if(_formkey.currentState.validate()){
                               var result = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: _emailcontroller.text, password: _passwordcontroller.text);
                               if(result != null )
